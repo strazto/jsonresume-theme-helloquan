@@ -3,6 +3,18 @@
 > All notable changes to this project will be documented in this file.
 > This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [[v4.2.0]](https://github.com/trucngn/jsonresume-theme-eloquent/releases/tag/v4.2.0) - 2021-01-13
+
+### Added
+
+* Add work.location support
+
+### Changed
+
+* Upgrade all dependencies to latest
+* For Education, do not display "Present" endDate when endDate is not specified
+* Some custom styling
+
 ## [[v4.1.0]](https://github.com/thibaudcolas/jsonresume-theme-eloquent/releases/tag/v4.1.0) - 2018-11-18
 
 ### Added
