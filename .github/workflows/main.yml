@@ -1,4 +1,9 @@
-on: [push]
+on:
+  push:
+    branches:
+    - '*'
+
+name: Package and upload asset
 
 jobs:
   package-theme:
