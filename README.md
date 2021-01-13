@@ -1,4 +1,4 @@
-# Eloquent
+# Eloquent ![Package and upload asset](https://github.com/trucngn/jsonresume-theme-eloquent/workflows/Package%20and%20upload%20asset/badge.svg)
 
 > This is a fork from Thibaud Colas Eloquent theme.
 
