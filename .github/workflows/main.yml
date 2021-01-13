@@ -1,0 +1,27 @@
+on: [push]
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 10
+        uses: actions/setup-node@v2
+        with:
+          node-version: '10'
+
+      - name: npm install, build, test and package
+        run: |
+          npm install
+          npm run pretest
+          npm run test
+          npm run package
+
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: tgz package
+          path: |
+            *.tgz

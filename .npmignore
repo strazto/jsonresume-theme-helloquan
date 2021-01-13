@@ -2,6 +2,7 @@ raw/
 test/
 assets/
 .githooks/
+.github/
 
 .editorconfig
 .gitattributes
@@ -14,3 +15,5 @@ assets/
 
 CHANGELOG.md
 server.js
+
+*.tgz
