@@ -41,7 +41,7 @@
 }
 
 .detail-highlights li:before {
-    content: '-';
+    content: '○';
     display: inline-block;
     width: 1em;
     margin-left: -1em;
@@ -89,15 +89,20 @@
     margin-bottom: 2px;
 }
 
+.label {
+    padding: .2em .6em .4em;
+    color: #444;
+}
+
 .labels {
     line-height: 2;
-    word-spacing: 5px;
+    word-spacing: 2px;
 }
 
 .label-keyword {
-    font-size: inherit;
-    background-color: #7eb0db;
+    font-size: 85%;
     margin-right: 5px;
+    border: 1px #aaa solid;
 }
 
 #skills h4,
