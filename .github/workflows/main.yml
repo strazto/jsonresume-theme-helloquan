@@ -1,7 +1,7 @@
 on: [push]
 
 jobs:
-  package:
+  package-theme:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -12,16 +12,16 @@ jobs:
         with:
           node-version: '10'
 
-      - name: npm install, build, test and package
+      - name: Build and package
         run: |
           npm install
           npm run pretest
           npm run test
           npm run package
 
-      - name: Archive production artifacts
+      - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: tgz package
+          name: theme-artifacts
           path: |
             *.tgz
