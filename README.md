@@ -1,4 +1,10 @@
-# Eloquent [![npm](https://img.shields.io/npm/v/jsonresume-theme-eloquent.svg)](https://www.npmjs.com/package/jsonresume-theme-eloquent) [![Build Status](https://img.shields.io/travis/thibaudcolas/jsonresume-theme-eloquent.svg)](https://travis-ci.org/thibaudcolas/jsonresume-theme-eloquent)
+# Eloquent
+
+> This is a fork from Thibaud Colas Eloquent theme.
+
+Works well with `node 10` and `resume-cli` 2.2.4.
+
+---
 
 An eloquent JSON Resume theme: fluent, persuasive, for developers. [See it live](https://rawgit.com/thibaudcolas/jsonresume-theme-eloquent/master/test/resume.html).
 

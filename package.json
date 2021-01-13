@@ -1,17 +1,20 @@
 {
   "name": "jsonresume-theme-eloquent",
-  "version": "4.2.0",
+  "version": "4.1.0",
   "description": "An eloquent JSON Resume theme: fluent, persuasive, for developers",
   "author": "Thibaud Colas",
+  "contributors": [
+    "Truc Nguyen"
+  ],
   "license": "MIT",
   "main": "index.js",
-  "homepage": "https://github.com/thibaudcolas/jsonresume-theme-eloquent",
+  "homepage": "https://github.com/trucngn/jsonresume-theme-eloquent",
   "repository": {
     "type": "git",
-    "url": "https://github.com/thibaudcolas/jsonresume-theme-eloquent.git"
+    "url": "https://github.com/trucngn/jsonresume-theme-eloquent.git"
   },
   "bugs": {
-    "url": "https://github.com/thibaudcolas/jsonresume-theme-eloquent/issues"
+    "url": "https://github.com/trucngn/jsonresume-theme-eloquent/issues"
   },
   "engines": {
     "node": ">=4.0"
