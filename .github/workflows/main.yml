@@ -1,0 +1,32 @@
+on:
+  push:
+    branches:
+    - '*'
+
+name: Package and upload asset
+
+jobs:
+  package-theme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 10
+        uses: actions/setup-node@v2
+        with:
+          node-version: '10'
+
+      - name: Build and package
+        run: |
+          npm install
+          npm run pretest
+          npm run test
+          npm run package
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: theme-artifacts
+          path: |
+            *.tgz
