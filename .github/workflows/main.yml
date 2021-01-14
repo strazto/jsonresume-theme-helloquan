@@ -1,13 +1,11 @@
-on:
-  push:
-    branches:
-    - '*'
+on: [push]
 
-name: Package and upload asset
+name: Build theme
 
 jobs:
-  package-theme:
+  build-theme:
     runs-on: ubuntu-latest
+    name: Build my jsonresume theme npm package
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -18,15 +16,40 @@ jobs:
           node-version: '10'
 
       - name: Build and package
+        id: build_and_package
         run: |
           npm install
           npm run pretest
           npm run test
           npm run package
+          echo "::set-output name=asset_name::$(ls -1 jsonresume-theme-eloquent-*.tgz)"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
           name: theme-artifacts
           path: |
-            *.tgz
+            ${{ steps.build_and_package.outputs.asset_name }}
+
+      - name: Create release
+        if: ${{ contains(github.ref, 'refs/tags/') }}
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+
+      - name: Upload release asset
+        if: ${{ contains(github.ref, 'refs/tags/') }}
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./${{ steps.build_and_package.outputs.asset_name }}
+          asset_name: ${{ steps.build_and_package.outputs.asset_name }}
+          asset_content_type: application/zip
