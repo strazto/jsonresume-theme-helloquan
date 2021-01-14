@@ -1,3 +1,7 @@
+#top {
+    max-width: 1200px;
+}
+
 .profile-card-wrapper {
     position: relative;
     padding-bottom: 0;
@@ -11,10 +15,22 @@
         padding-right: 0;
         padding-bottom: 10px;
         overflow-y: hidden;
+        width: 25%;
+        max-width: 300px;
+    }
+
+    .col-md-8 {
+        width: 75%;
     }
 
     .card-wrapper {
         float: right;
+    }
+
+    .grid-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
     }
 }
 
@@ -82,11 +98,20 @@
 
     .detail-item-content.col-sm-9 {
         border-right: 1px solid #ccd6dd;
+        width: 80%;
+    }
+
+    .detail-item-sidebar.col-sm-3 {
+        width: 20%;
     }
 }
 
 .detail-highlights li {
     margin-bottom: 2px;
+}
+
+.detail-highlights p {
+    display: inline;
 }
 
 .label {

@@ -40,6 +40,12 @@ describe('Helpers', () => {
             it('should truncate text', () => {
                 expect(helpers.truncate('1234567890', 5).string.length).to.equal(5);
             });
+
+            describe('normalize', () => {
+                it('should normalize name', () => {
+                    expect(helpers.normalizeName('John Doe').string).to.equal('john-doe');
+                });
+            });
         });
     });
 });
