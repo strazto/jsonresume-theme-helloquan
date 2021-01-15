@@ -2,6 +2,10 @@
     max-width: 1200px;
 }
 
+body {
+    font-size: 14px;
+}
+
 .profile-card-wrapper {
     position: relative;
     padding-bottom: 0;
@@ -115,7 +119,7 @@
 }
 
 .label {
-    padding: .2em .6em .4em;
+    padding: .4em .6em .4em;
     color: #444;
 }
 
