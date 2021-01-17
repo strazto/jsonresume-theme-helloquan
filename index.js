@@ -17,8 +17,8 @@ module.exports = {
     },
 
     pdfRenderOptions: {
-        format: "A4",
-        margin: {top:"10mm", right:"10mm", bottom:"10mm", left: "10mm"},
+        format: 'A4',
+        margin: {top:'10mm', right:'10mm', bottom:'10mm', left: '10mm'},
         printBackground: false
     }
 };

@@ -3,6 +3,19 @@
 > All notable changes to this project will be documented in this file.
 > This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [[v4.3.0]](https://github.com/trucngn/jsonresume-theme-eloquent/releases/tag/v4.3.0) - 2021-01-16
+
+### Added
+
+* Add navigation in about section
+* Add summary for interests
+* Add support for markdown
+
+### Changed
+
+* Upgrade all dependencies to latest
+* Some custom styling
+
 ## [[v4.2.1]](https://github.com/trucngn/jsonresume-theme-eloquent/releases/tag/v4.2.1) - 2021-01-14
 
 ### Changed
