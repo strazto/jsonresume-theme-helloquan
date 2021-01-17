@@ -1,6 +1,6 @@
 <!--
   This awesome resume was created {{#if resume.basics.name}}by {{resume.basics.name}} {{/if}}with the JSON resume schema: https://jsonresume.org/
-  It uses a custom Eloquent theme: https://github.com/trucngn/jsonresume-theme-eloquent
+  It uses a custom Eloquent theme: https://github.com/trucngn/jsonresume-theme-helloquan
 -->
 <!doctype html>
 <html lang="en">
@@ -352,20 +352,21 @@
                       {{#if startDate}}
                         <p class="visible-xs-block text-muted">
                           <small>
-                            <time datetime="{{startDate}}">{{formatYYYY startDate}}</time>
-                            &nbsp;—&nbsp;
-                            {{#if endDate}}
-                              <time datetime="{{endDate}}">{{formatYYYY endDate}}</time>
-                            {{else}}
-                              <time>Present</time>
+                            {{#if institution}}
+                            <span itemprop="name">{{institution}}</span>&nbsp;|
                             {{/if}}
+                            <time datetime="{{startDate}}">{{formatYYYY startDate}}</time>
+                            {{#if endDate}}
+                            &nbsp;—&nbsp;
+                            <time datetime="{{endDate}}">{{formatYYYY endDate}}</time>
                             &nbsp;<span class="duration-counter"><i aria-hidden="true" class="icon-clock-o"></i>&nbsp;{{humaneDuration startDate endDate}}</span>
+                            {{/if}}
                           </small>
                         </p>
                       {{/if}}
 
                       {{#if institution}}
-                        <p class="text-muted">
+                        <p class="text-muted hidden-xs">
                           <span itemprop="name">{{institution}}</span>
                           {{~#if gpa~}}
                             ,&nbsp;GPA: {{gpa}}

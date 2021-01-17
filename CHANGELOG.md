@@ -3,6 +3,13 @@
 > All notable changes to this project will be documented in this file.
 > This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [[v4.4.0]](https://github.com/trucngn/jsonresume-theme-helloquan/releases/tag/v4.4.0) - 2021-01-17
+
+### Changed
+
+* Rename theme to jsonresume-theme-helloquan
+* Fix education dates when endDate is omitted
+
 ## [[v4.3.0]](https://github.com/trucngn/jsonresume-theme-eloquent/releases/tag/v4.3.0) - 2021-01-16
 
 ### Added

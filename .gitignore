@@ -32,5 +32,4 @@ test/resume.pdf
 test/old-resume.html
 
 dist/
-jsonresume-theme-eloquent-*.tgz
-
+jsonresume-theme-*.tgz

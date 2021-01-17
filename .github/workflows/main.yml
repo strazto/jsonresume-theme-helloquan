@@ -22,7 +22,7 @@ jobs:
           npm run pretest
           npm run test
           npm run package
-          echo "::set-output name=asset_name::$(ls -1 jsonresume-theme-eloquent-*.tgz)"
+          echo "::set-output name=asset_name::$(ls -1 jsonresume-theme-helloquan-*.tgz)"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
