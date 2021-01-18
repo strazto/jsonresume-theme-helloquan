@@ -53,3 +53,16 @@ jobs:
           asset_path: ./${{ steps.build_and_package.outputs.asset_name }}
           asset_name: ${{ steps.build_and_package.outputs.asset_name }}
           asset_content_type: application/zip
+
+      - name: Prepare public directory
+        run: |
+          mkdir public
+          cp test/resume.html public/index.html
+
+      - name: Deploy to GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: public
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

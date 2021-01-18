@@ -1,12 +1,14 @@
 # Helloquan ![Build theme](https://github.com/trucngn/jsonresume-theme-eloquent/workflows/Build%20theme/badge.svg?branch=master)
 
-> This is a fork from Thibaud Colas Eloquent theme.
+> ### This is a fork from Thibaud Colas [Eloquent](https://github.com/thibaudcolas/jsonresume-theme-eloquent) theme.
 
 Works well with `node 10` and `resume-cli` 2.2.4.
 
-> A sample final HTML can be dowloaded [here](https://raw.githubusercontent.com/trucngn/jsonresume-theme-helloquan/master/test/resume.html). Save the file and open it locally.
+Visit **[this page](https://trucngn.github.io/jsonresume-theme-helloquan/)** for an online demo of this theme.
 
 ---
+
+## Eloquent
 
 An eloquent JSON Resume theme: fluent, persuasive, for developers. [See it live](https://rawgit.com/thibaudcolas/jsonresume-theme-eloquent/master/test/resume.html).
 
