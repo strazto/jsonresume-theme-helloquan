@@ -47,12 +47,12 @@
         <div class="card">
           {{#resume.basics}}
               <div class="row no-gutters">
-                <div id="profile-pic-wrapper" class="col-xs-3 col-3 col-md-12">
+                <div id="profile-pic-wrapper" class="col-xs-3 col-3 col-sm-12">
                     {{#if picture}}
                       <img class="hidden-print profile-pic media-object img-circle center-block" src="{{picture}}" alt="" itemprop="image">
                     {{/if}}
                 </div>
-                <div class="col-9 col-xs-9 col-md-12">
+                <div class="col-9 col-xs-9 col-sm-12">
                     {{#if name}}
                       <h1 class="text-center" itemprop="name">{{name}}</h1>
                     {{/if}}
@@ -60,7 +60,7 @@
                       <h2 class="text-center text-muted" itemprop="jobTitle">{{label}}</h2>
                     {{/if}}
                 </div>
-
+            <div class="clearfix visible-sm-block visible-md-block visible-lg-block visible-xl-block visible-xxl-block"></div>
             <ul class="basics nav nav-stacked">
               {{#if phone}}
                 <li class="basics-item">
