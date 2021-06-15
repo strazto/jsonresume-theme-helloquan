@@ -46,23 +46,22 @@
       <section id="profile" class="col-md-4 card-wrapper profile-card-wrapper">
         <div class="card">
           {{#resume.basics}}
-          <div class="row no-gutters">
-
-            <div class="col-xs-5 col-5 col-md-12">
-            {{#if picture}}
-              <img class="hidden-print profile-pic media-object img-circle center-block" src="{{picture}}" alt="" width="128" height="128" itemprop="image">
-            {{/if}}
-
-            {{#if name}}
-              <h1 class="text-center" itemprop="name">{{name}}</h1>
-            {{/if}}
-            {{#if label}}
-              <h2 class="text-center text-muted" itemprop="jobTitle">{{label}}</h2>
-            {{/if}}
+              <div class="row">
+                <div id="profile-pic-wrapper" class="col-xs-3 col-3 col-md-12">
+                    {{#if picture}}
+                      <img class="hidden-print profile-pic media-object img-circle center-block" src="{{picture}}" alt="" itemprop="image">
+                    {{/if}}
+                </div>
+                <div class="col-9 col-xs-9 col-md-12">
+                    {{#if name}}
+                      <h1 class="text-center" itemprop="name">{{name}}</h1>
+                    {{/if}}
+                    {{#if label}}
+                      <h2 class="text-center text-muted" itemprop="jobTitle">{{label}}</h2>
+                    {{/if}}
+                </div>
             </div>
-
-            <div class="col-7 col-xs-7 col-md-12">
-
+            <hr>
             <ul class="basics nav nav-stacked">
               {{#if phone}}
                 <li class="basics-item">
@@ -128,13 +127,11 @@
               </ul>
             {{/if}}
 
-            </div>
           {{/resume.basics}}
 
           <ul class="nav nav-justified hidden-xs hidden-sm">
             <li><a href="#top" class="text-muted" title="Scroll to top"><i aria-hidden="true" class="icon-chevron-up"></i><span class="sr-only">Go to top</span></a></li>
           </ul>
-        </div>
       </section>
 
       {{#if resume.basics.summary}}
