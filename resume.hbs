@@ -416,10 +416,11 @@
               <ul class="list-unstyled grid-list">
                 {{#each resume.skills}}
                   <li class="detail-item row" id="{{itemID 'skill' @index ../resume.skills.length}}">
-                    <div class="col-xs-12 detail-item-content">
+                    <div class="col-xs-12 detail-item-content row no-gutters">
                       <a class="anchor-link item-anchor" href="#{{itemID 'skill' @index ../resume.skills.length}}">#</a>
+                      <div class="col-xs-3">
                       <h4 class="grid-list-title">{{name}} {{#if level}}<span class="text-muted">— <em>{{level}}</em></span>{{/if}}</h4>
-
+                      </div>
                       {{#if keywords}}
                         <ul class="list-inline labels">
                           {{#keywords}}<li class="label label-keyword">{{.}}</li>{{/keywords}}
@@ -542,19 +543,23 @@
               <ul class="list-unstyled grid-list">
                 {{#each resume.interests}}
                   <li class="detail-item row" id="{{itemID 'interest' @index ../resume.interests.length}}">
-                    <div class="col-xs-12 detail-item-content">
+                    <div class="col-xs-12 detail-item-content row no-gutters">
                       <a class="anchor-link item-anchor" href="#{{itemID 'interest' @index ../resume.interests.length}}">#</a>
-                      <h4 class="grid-list-title">{{name}}</h4>
-
+                      <div class="col-xs-3">
+                          <h4 class="grid-list-title">{{name}}</h4>
+                      </div>
                       {{#if summary}}
-                      {{markdown summary}}
+                          <div class="col-xs-12">
+                              {{markdown summary}}
+                          </div>
                       {{/if}}
-
-                      {{#if keywords}}
-                        <ul class="list-inline labels">
-                          {{#keywords}}<li class="label label-keyword">{{.}}</li>{{/keywords}}
-                        </ul>
-                      {{/if}}
+                      <div class="col-xs-8">
+                          {{#if keywords}}
+                            <ul class="list-inline labels">
+                              {{#keywords}}<li class="label label-keyword">{{.}}</li>{{/keywords}}
+                            </ul>
+                          {{/if}}
+                      </div>
                     </div>
                   </li>
                 {{/each}}
