@@ -418,7 +418,7 @@
                   <li class="detail-item row" id="{{itemID 'skill' @index ../resume.skills.length}}">
                     <div class="col-xs-12 detail-item-content">
                       <a class="anchor-link item-anchor" href="#{{itemID 'skill' @index ../resume.skills.length}}">#</a>
-                      <h4>{{name}} {{#if level}}<span class="text-muted">— <em>{{level}}</em></span>{{/if}}</h4>
+                      <h4 class="grid-list-title">{{name}} {{#if level}}<span class="text-muted">— <em>{{level}}</em></span>{{/if}}</h4>
 
                       {{#if keywords}}
                         <ul class="list-inline labels">
@@ -544,7 +544,7 @@
                   <li class="detail-item row" id="{{itemID 'interest' @index ../resume.interests.length}}">
                     <div class="col-xs-12 detail-item-content">
                       <a class="anchor-link item-anchor" href="#{{itemID 'interest' @index ../resume.interests.length}}">#</a>
-                      <h4>{{name}}</h4>
+                      <h4 class="grid-list-title">{{name}}</h4>
 
                       {{#if summary}}
                       {{markdown summary}}
@@ -576,7 +576,7 @@
                   <li class="detail-item row" id="{{itemID 'language' @index ../resume.languages.length}}">
                     <div class="col-xs-12 detail-item-content">
                       <a class="anchor-link item-anchor" href="#{{itemID 'language' @index ../resume.languages.length}}">#</a>
-                      <h4>
+                      <h4 class="grid-list-title">
                         <strong>{{language}}</strong>
                         {{~#if fluency~}}
                           ,&nbsp;<span>{{fluency}}</span>
