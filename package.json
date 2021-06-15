@@ -47,8 +47,8 @@
   "dependencies": {
     "email-scramble": "^2.0.1",
     "handlebars": "^4.7.6",
-    "moment": "^2.22.2",
-    "micromark": "^2.10.1"
+    "micromark": "^2.10.1",
+    "moment": "^2.22.2"
   },
   "devDependencies": {
     "babel": "^5.8.29",
