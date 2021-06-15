@@ -37,6 +37,27 @@
   top: 50%;
   margin-top: -10px;
 }
+.basics-pronouns {
+    text-align: center;
+}
+.list-inline > .basics-pronoun-item {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+li.basics-pronoun-item:first-of-type:before {
+    content: '(';
+}
+
+li.basics-pronoun-item:after {
+    content: '/';
+}
+
+li.basics-pronoun-item:last-of-type:after {
+    content: ')';
+}
+
 
 .basics-item .info, .profile-item .info {
   position: relative;
