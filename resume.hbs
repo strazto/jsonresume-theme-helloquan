@@ -59,6 +59,11 @@
                     {{#if label}}
                       <h2 class="text-center text-muted" itemprop="jobTitle">{{label}}</h2>
                     {{/if}}
+                    {{#if pronouns}}
+                      <ul class="list-inline list-unstyled basics-pronouns" itemprop="pronouns" id="pronoun-list">
+                          {{#each pronouns}}<li class="basics-pronoun-item" itemprop="pronouns">{{.}}</li>{{/each}}
+                      </ul>
+                    {{/if}}
                 </div>
             <div class="clearfix visible-sm-block visible-md-block visible-lg-block visible-xl-block visible-xxl-block"></div>
             <ul class="basics nav nav-stacked">
