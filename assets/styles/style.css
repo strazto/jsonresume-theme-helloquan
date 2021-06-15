@@ -75,6 +75,12 @@ body {
     font-weight: bold;
 }
 
+@media (max-width: 767.98px) {
+    .detail-item {
+        padding: 2px 0;
+    }
+}
+
 @media (min-width: 768px) {
     .detail {
         padding: 10px 10px 10px 50px;
@@ -92,7 +98,7 @@ body {
 }
 
 .detail-item {
-    padding: 10px 0;
+    padding: 5px 0;
     margin: 0 3px;
     border-top: 1px solid #ccd6dd;
 }
@@ -147,4 +153,8 @@ body {
 
 #references .detail-item {
     border: none;
+}
+
+.grid-list-title {
+    display: inline-block;
 }
