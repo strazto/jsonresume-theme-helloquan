@@ -39,6 +39,40 @@
       </div>
     {{/if}}
 {{/inline}}
+{{#* inline "duration-xs-education"}}
+  {{#if startDate}}
+    <p class="visible-xs-block text-muted">
+      <small>
+        {{#if institution}}
+        <span itemprop="name">{{institution}}</span>&nbsp;|
+        {{/if}}
+        <time datetime="{{startDate}}">{{formatYYYY startDate}}</time>
+        {{#if endDate}}
+        &nbsp;—&nbsp;
+        <time datetime="{{endDate}}">{{formatYYYY endDate}}</time>
+        &nbsp;<span class="duration-counter"><i aria-hidden="true" class="icon-clock-o"></i>&nbsp;{{humaneDuration startDate endDate}}</span>
+        {{/if}}
+      </small>
+    </p>
+  {{/if}}
+{{/inline}}
+
+{{#* inline "duration-sm-education"}}
+    {{#if startDate}}
+      <div class="col-sm-3 detail-item-sidebar text-muted text-center hidden-xs">
+        <p>
+          <time datetime="{{startDate}}">{{formatYYYY startDate}}</time>
+          {{#if endDate}}
+          &nbsp;—&nbsp;
+            <time datetime="{{endDate}}">{{formatYYYY endDate}}</time>
+        </p>
+        <p>
+          <i aria-hidden="true" class="icon-clock-o icon-left"></i>&nbsp;{{humaneDuration startDate endDate}}
+          {{/if}}
+        </p>
+      </div>
+    {{/if}}
+{{/inline}}
 
 <html lang="en">
 <head>
@@ -351,22 +385,7 @@
                           ,&nbsp;<span>{{studyType}}</span>
                         {{/if}}
                       </h4>
-
-                      {{#if startDate}}
-                        <p class="visible-xs-block text-muted">
-                          <small>
-                            {{#if institution}}
-                            <span itemprop="name">{{institution}}</span>&nbsp;|
-                            {{/if}}
-                            <time datetime="{{startDate}}">{{formatYYYY startDate}}</time>
-                            {{#if endDate}}
-                            &nbsp;—&nbsp;
-                            <time datetime="{{endDate}}">{{formatYYYY endDate}}</time>
-                            &nbsp;<span class="duration-counter"><i aria-hidden="true" class="icon-clock-o"></i>&nbsp;{{humaneDuration startDate endDate}}</span>
-                            {{/if}}
-                          </small>
-                        </p>
-                      {{/if}}
+                      {{> duration-xs-education}}
 
                       {{#if institution}}
                         <p class="text-muted hidden-xs">
@@ -383,21 +402,7 @@
                         </ul>
                       {{/if}}
                     </div>
-
-                    {{#if startDate}}
-                      <div class="col-sm-3 detail-item-sidebar text-muted text-center hidden-xs">
-                        <p>
-                          <time datetime="{{startDate}}">{{formatYYYY startDate}}</time>
-                          {{#if endDate}}
-                          &nbsp;—&nbsp;
-                            <time datetime="{{endDate}}">{{formatYYYY endDate}}</time>
-                        </p>
-                        <p>
-                          <i aria-hidden="true" class="icon-clock-o icon-left"></i>&nbsp;{{humaneDuration startDate endDate}}
-                          {{/if}}
-                        </p>
-                      </div>
-                    {{/if}}
+                    {{> duration-sm-education}}
                   </li>
                 {{/each}}
               </ul>
