@@ -1,7 +1,3 @@
-#top {
-    max-width: 1200px;
-}
-
 body {
     font-size: 14px;
 }
@@ -19,12 +15,6 @@ body {
         padding-right: 0;
         padding-bottom: 10px;
         overflow-y: hidden;
-        width: 25%;
-        max-width: 300px;
-    }
-
-    .col-md-8 {
-        width: 75%;
     }
 
     .card-wrapper {
