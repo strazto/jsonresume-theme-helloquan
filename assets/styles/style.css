@@ -37,9 +37,12 @@ body {
         float: left;
     }
 }
+.detail-list {
+    margin-bottom: 5px;
+}
 
 .detail {
-    padding: 5px;
+    padding: 5px 5px 0 5px;
 }
 
 .detail h3 {
@@ -73,7 +76,7 @@ body {
 
 @media (min-width: 768px) {
     .detail {
-        padding: 10px 10px 10px 50px;
+        padding: 5px 10px 0 50px;
     }
 
     .detail h3 {
