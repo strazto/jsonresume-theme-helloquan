@@ -609,10 +609,11 @@
                 </a>
               </h3>
 
-              <ul class="list-unstyled">
+              <ul class="list-unstyled row">
+                <div class="row detail-item">
                 {{#each resume.references}}
-                  <li class="detail-item row" id="{{itemID 'reference' @index ../resume.references.length}}">
-                    <div class="col-xs-12 detail-item-content">
+                  <li class="card-wrapper col-xs-6 col-6" id="{{itemID 'reference' @index ../resume.references.length}}">
+                    <div class="detail-item-content card">
                       <a class="anchor-link item-anchor" href="#{{itemID 'reference' @index ../resume.references.length}}">#</a>
                       <blockquote>
                         <p itemprop="description">{{markdown reference}}</p>
@@ -621,6 +622,7 @@
                     </div>
                   </li>
                 {{/each}}
+                </div>
               </ul>
             </div>
           {{/if}}
