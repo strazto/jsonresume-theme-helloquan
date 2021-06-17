@@ -3,6 +3,43 @@
   It uses a custom Eloquent theme: https://github.com/trucngn/jsonresume-theme-helloquan
 -->
 <!doctype html>
+{{! Partials}}
+{{#* inline "duration-xs"}}
+  {{#if startDate}}
+    <p class="visible-xs-block text-muted">
+      <small>
+        <time datetime="{{startDate}}">{{formatMMMMYYYY startDate}}</time>&nbsp;—&nbsp;
+        {{#if endDate}}
+          <time datetime="{{endDate}}">{{formatMMMMYYYY endDate}}</time>
+        {{else}}
+          <time>Present</time>
+        {{/if}}
+        &nbsp;<span class="duration-counter"><i aria-hidden="true" class="icon-clock-o"></i>&nbsp;{{humaneDuration startDate endDate}}</span>
+      </small>
+    </p>
+  {{/if}}
+{{/inline}}
+{{#* inline "duration-sm"}}
+    {{#if startDate}}
+      <div class="col-sm-3 detail-item-sidebar text-muted text-center hidden-xs">
+        <p>
+          <time datetime="{{startDate}}">{{formatMMMMYYYY startDate}}</time>
+          <br>
+          &nbsp;—&nbsp;
+          {{#if endDate}}
+            <br>
+            <time datetime="{{endDate}}">{{formatMMMMYYYY endDate}}</time>
+          {{else}}
+            <time>Present</time>
+          {{/if}}
+        </p>
+        <p>
+          <i aria-hidden="true" class="icon-clock-o icon-left"></i>&nbsp;{{humaneDuration startDate endDate}}
+        </p>
+      </div>
+    {{/if}}
+{{/inline}}
+
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -213,21 +250,7 @@
                           {{/if}}
                         {{/if}}
                       </h4>
-
-                      {{#if startDate}}
-                        <p class="visible-xs-block text-muted">
-                          <small>
-                            <time datetime="{{startDate}}">{{formatMMMMYYYY startDate}}</time>&nbsp;—&nbsp;
-                            {{#if endDate}}
-                              <time datetime="{{endDate}}">{{formatMMMMYYYY endDate}}</time>
-                            {{else}}
-                              <time>Present</time>
-                            {{/if}}
-                            &nbsp;<span class="duration-counter"><i aria-hidden="true" class="icon-clock-o"></i>&nbsp;{{humaneDuration startDate endDate}}</span>
-                          </small>
-                        </p>
-                      {{/if}}
-
+                      {{> duration-xs}}
                       <p>{{markdown summary}}</p>
 
                       {{#if highlights}}
@@ -238,25 +261,7 @@
                         </ul>
                       {{/if}}
                     </div>
-
-                    {{#if startDate}}
-                      <div class="col-sm-3 detail-item-sidebar text-muted text-center hidden-xs">
-                        <p>
-                          <time datetime="{{startDate}}">{{formatMMMMYYYY startDate}}</time>
-                          <br>
-                          &nbsp;—&nbsp;
-                          {{#if endDate}}
-                            <br>
-                            <time datetime="{{endDate}}">{{formatMMMMYYYY endDate}}</time>
-                          {{else}}
-                            <time>Present</time>
-                          {{/if}}
-                        </p>
-                        <p>
-                          <i aria-hidden="true" class="icon-clock-o icon-left"></i>&nbsp;{{humaneDuration startDate endDate}}
-                        </p>
-                      </div>
-                    {{/if}}
+                    {{> duration-sm}}
                   </li>
                 {{/each}}
               </ul>
@@ -307,20 +312,7 @@
                           ,&nbsp;<span>{{position}}</span>
                         {{/if}}
                       </h4>
-
-                      {{#if startDate}}
-                        <p class="visible-xs-block text-muted">
-                          <small>
-                            <time datetime="{{startDate}}">{{formatMMMMYYYY startDate}}</time>&nbsp;—&nbsp;
-                            {{#if endDate}}
-                              <time datetime="{{endDate}}">{{formatMMMMYYYY endDate}}</time>
-                            {{else}}
-                              <time>Present</time>
-                            {{/if}}
-                            &nbsp;<span class="duration-counter"><i aria-hidden="true" class="icon-clock-o"></i>&nbsp;{{humaneDuration startDate endDate}}</span>
-                          </small>
-                        </p>
-                      {{/if}}
+                      {{> duration-xs}}
 
                       <p itemprop="description">{{markdown summary}}</p>
 
@@ -332,25 +324,7 @@
                         </ul>
                       {{/if}}
                     </div>
-
-                    {{#if startDate}}
-                      <div class="col-sm-3 detail-item-sidebar text-muted text-center hidden-xs">
-                        <p>
-                          <time datetime="{{startDate}}">{{formatMMMMYYYY startDate}}</time>
-                          <br>
-                          &nbsp;—&nbsp;
-                          {{#if endDate}}
-                            <br>
-                            <time datetime="{{endDate}}">{{formatMMMMYYYY endDate}}</time>
-                          {{else}}
-                            <time>Present</time>
-                          {{/if}}
-                        </p>
-                        <p>
-                          <i aria-hidden="true" class="icon-clock-o icon-left"></i>&nbsp;{{humaneDuration startDate endDate}}
-                        </p>
-                      </div>
-                    {{/if}}
+                    {{> duration-sm}}
                   </li>
                 {{/each}}
               </ul>
