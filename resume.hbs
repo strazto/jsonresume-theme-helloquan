@@ -84,6 +84,54 @@
     {{/if}}
 {{/inline}}
 
+{{#* inline "coalesce-entity"}}
+    {{~#if entity~}}
+      ,&nbsp;
+      {{#if url}}
+        <a href="{{url}}"  target="_blank" rel="noreferrer noopener" itemprop="url"><strong itemprop="name">{{entity}}</strong></a>
+      {{else}}
+        <strong itemprop="name">{{entity}}</strong>
+      {{/if}}
+      {{#if location}}
+        <span class="text-muted">
+          <span itemprop="name">&nbsp;@ {{location}}</span>
+        </span>
+      {{/if}}
+    {{/if}}
+{{/inline}}
+{{#* inline "experience-list"}}
+ {{!-- id=(itemID 'experience' @index ../resume.work.length)  --}}
+ {{!-- entity=company, organization, entity, even institution i guess  --}}
+ {{!-- itemtype="Organization" --}}
+ {{!-- itemprop="worksFor" --}}
+ <li class="detail-item row" id="{{id}}"
+     {{~#if itemprop~}} itemprop="{{itemprop}}" {{/if}}
+     {{~#if itemprop~}} itemscope {{/if}}
+     {{~#if itemtype~}} itemtype="http://schema.org/{{itemtype}}" {{/if}}>
+    <div class="col-sm-9 detail-item-content">
+      <a class="anchor-link item-anchor" href="#{{id}}">#</a>
+      <h4>
+        <strong>{{position}}</strong>
+          {{~#if company~}}{{> coalesce-entity entity=company}}{{/if}}
+          {{~#if entity~}}{{> coalesce-entity entity=entity}}{{/if}}
+          {{~#if organization~}}{{> coalesce-entity entity=organization}}{{/if}}
+          {{~#if name~}}{{> coalesce-entity entity=name}}{{/if}}
+          {{> duration-xs}}
+      </h4>
+      <p itemprop="description">{{markdown summary}}</p>
+
+      {{#if highlights}}
+        <ul class="detail-highlights">
+          {{#each highlights}}
+            <li>{{markdown .}}</li>
+          {{/each}}
+        </ul>
+      {{/if}}
+    </div>
+    {{> duration-sm}}
+  </li>
+
+{{/inline}}
 {{#* inline "label-list"}}
   {{!-- id="{{itemID 'interest' @index ../resume.interests.length}}" --}}
   <li class="detail-item row" id="{{id}}">
