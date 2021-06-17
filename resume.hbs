@@ -163,6 +163,7 @@
                 <div class="col-xs-12">
                   <p itemprop="description">
                     {{#if resume.work}}<a href="#experience" title="Work Experience"><span>Work Experience</span></a>{{/if}}
+                    {{#if resume.projects}} | <a href="#projects" title="Projects"><span>Projects</span></a>{{/if}}
                     {{#if resume.volunteer}} | <a href="#volunteer" title="Volunteering"><span>Volunteering</span></a>{{/if}}
                     {{#if resume.education}} | <a href="#education" title="Education"><span>Education</span></a>{{/if}}
                     {{#if resume.skills}} | <a href="#skills" title="Skills"><span>Skills</span></a>{{/if}}
@@ -260,6 +261,26 @@
                 {{/each}}
               </ul>
             </div>
+          {{/if}}
+
+          {{#if resume.projects}}
+          {{!
+            Schema:
+              name, description, highlights, keywords, startDate, endDate,
+              url, roles
+              entity
+              type
+           }}
+           <div class="detail", id="projects">
+              <h3 class="text-uppercase">
+                <a class="anchor-link text-muted" href="#projects">
+                  <i aria-hidden="true" class="icon-lg icon-bookmark"></i> Projects
+                  <span class="anchor-icon" aria-hidden="true"></span>
+                </a>
+              </h3>
+           </div>
+
+
           {{/if}}
 
           {{#if resume.volunteer}}
