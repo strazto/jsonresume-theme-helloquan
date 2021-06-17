@@ -334,40 +334,9 @@
             <div class="detail" id="experience">
               {{> section-header id="experience" icon="icon-building" title="Work Experience"}}
 
-              <ul class="list-unstyled">
+              <ul class="list-unstyled detail-list">
                 {{#each resume.work}}
-                  <li class="detail-item row" id="{{itemID 'experience' @index ../resume.work.length}}" itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
-                    <div class="col-sm-9 detail-item-content">
-                      <a class="anchor-link item-anchor" href="#{{itemID 'experience' @index ../resume.work.length}}">#</a>
-                      <h4>
-                        <strong>{{position}}</strong>
-                        {{~#if company~}}
-                          ,&nbsp;
-                          {{#if website}}
-                            <a href="{{website}}"  target="_blank" rel="noreferrer noopener" itemprop="url"><strong itemprop="name">{{company}}</strong></a>
-                          {{else}}
-                            <strong itemprop="name">{{company}}</strong>
-                          {{/if}}
-                          {{#if location}}
-                            <span class="text-muted">
-                              <span itemprop="name">&nbsp;@ {{location}}</span>
-                            </span>
-                          {{/if}}
-                        {{/if}}
-                      </h4>
-                      {{> duration-xs}}
-                      <p>{{markdown summary}}</p>
-
-                      {{#if highlights}}
-                        <ul class="detail-highlights">
-                          {{#each highlights}}
-                            <li>{{markdown .}}</li>
-                          {{/each}}
-                        </ul>
-                      {{/if}}
-                    </div>
-                    {{> duration-sm}}
-                  </li>
+                  {{> experience-list id=(itemID 'experience' @index ../resume.work.length) itemprop="worksfor" itemtype="Organization"}}
                 {{/each}}
               </ul>
             </div>
@@ -392,35 +361,9 @@
             <div class="detail" id="volunteer">
               {{> section-header id="volunteer" icon="icon-bookmark" title="Volunteering"}}
 
-              <ul class="list-unstyled">
+              <ul class="list-unstyled detail-list">
                 {{#each resume.volunteer}}
-                  <li class="detail-item row" id="{{itemID 'volunteer' @index ../resume.volunteer.length}}" itemprop="memberOf" itemscope itemtype="http://schema.org/Organization">
-                    <div class="col-sm-9 detail-item-content">
-                      <a class="anchor-link item-anchor" href="#{{itemID 'volunteer' @index ../resume.volunteer.length}}">#</a>
-                      <h4>
-                        {{#if website}}
-                          <a href="{{website}}"  target="_blank" rel="noreferrer noopener" itemprop="url"><strong itemprop="name">{{organization}}</strong></a>
-                        {{else}}
-                          <strong itemprop="name">{{organization}}</strong>
-                        {{/if}}
-                        {{~#if position~}}
-                          ,&nbsp;<span>{{position}}</span>
-                        {{/if}}
-                      </h4>
-                      {{> duration-xs}}
-
-                      <p itemprop="description">{{markdown summary}}</p>
-
-                      {{#if highlights}}
-                        <ul class="detail-highlights">
-                          {{#each highlights}}
-                            <li>{{.}}</li>
-                          {{/each}}
-                        </ul>
-                      {{/if}}
-                    </div>
-                    {{> duration-sm}}
-                  </li>
+                    {{> experience-list id=(itemID 'volunteer' @index ../resume.volunteer.length)  itemprop="memberOf" itemtype="Organization" }}
                 {{/each}}
               </ul>
             </div>
@@ -430,7 +373,7 @@
             <div class="detail" id="education">
               {{> section-header id="education" icon="icon-graduation-cap" title="Education"}}
 
-              <ul class="list-unstyled">
+              <ul class="list-unstyled detail-list">
                 {{#each resume.education}}
                   <li class="detail-item row" id="{{itemID 'education' @index ../resume.education.length}}" itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
                     <div class="col-sm-9 detail-item-content">
@@ -481,7 +424,7 @@
             <div class="detail" id="awards">
               {{> section-header id="awards" icon="icon-trophy" title="Awards"}}
 
-              <ul class="list-unstyled">
+              <ul class="list-unstyled detail-list">
                 {{#each resume.awards}}
                   <li class="detail-item row" id="{{itemID 'award' @index ../resume.awards.length}}">
                     <div class="col-sm-9 detail-item-content">
@@ -523,7 +466,7 @@
             <div class="detail" id="publications">
               {{> section-header id="publications" icon="icon-book" title="Publications"}}
 
-              <ul class="list-unstyled">
+              <ul class="list-unstyled detail-list">
                 {{#each resume.publications}}
                   <li class="detail-item row" id="{{itemID 'publication' @index ../resume.publications.length}}" itemscope itemtype="http://schema.org/CreativeWork">
                     <div class="col-sm-9 detail-item-content">
