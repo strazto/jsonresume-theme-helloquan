@@ -84,6 +84,29 @@
     {{/if}}
 {{/inline}}
 
+{{#* inline "label-list"}}
+  {{!-- id="{{itemID 'interest' @index ../resume.interests.length}}" --}}
+  <li class="detail-item row" id="{{id}}">
+    <a class="anchor-link item-anchor" href="#{{id}}">#</a>
+    <div class="col-xs-12 detail-item-content row no-gutters">
+      <div class="col-xs-3">
+          <h4 class="grid-list-title">{{name}}</h4>
+      </div>
+      {{#if summary}}
+          <div class="col-xs-12">
+              {{markdown summary}}
+          </div>
+      {{/if}}
+      <div class="col-xs-9">
+          {{#if keywords}}
+            <ul class="list-inline labels">
+              {{#keywords}}<li class="label label-keyword">{{.}}</li>{{/keywords}}
+            </ul>
+          {{/if}}
+      </div>
+    </div>
+  </li>
+{{/inline}}
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -400,19 +423,7 @@
 
               <ul class="list-unstyled grid-list">
                 {{#each resume.skills}}
-                  <li class="detail-item row" id="{{itemID 'skill' @index ../resume.skills.length}}">
-                    <div class="col-xs-12 detail-item-content row no-gutters">
-                      <a class="anchor-link item-anchor" href="#{{itemID 'skill' @index ../resume.skills.length}}">#</a>
-                      <div class="col-xs-3">
-                      <h4 class="grid-list-title">{{name}} {{#if level}}<span class="text-muted">— <em>{{level}}</em></span>{{/if}}</h4>
-                      </div>
-                      {{#if keywords}}
-                        <ul class="list-inline labels">
-                          {{#keywords}}<li class="label label-keyword">{{.}}</li>{{/keywords}}
-                        </ul>
-                      {{/if}}
-                    </div>
-                  </li>
+                  {{> label-list id=(itemID 'skill' @index ../resume.skills.length)}}
                 {{/each}}
               </ul>
             </div>
@@ -512,26 +523,7 @@
 
               <ul class="list-unstyled grid-list">
                 {{#each resume.interests}}
-                  <li class="detail-item row" id="{{itemID 'interest' @index ../resume.interests.length}}">
-                    <div class="col-xs-12 detail-item-content row no-gutters">
-                      <a class="anchor-link item-anchor" href="#{{itemID 'interest' @index ../resume.interests.length}}">#</a>
-                      <div class="col-xs-3">
-                          <h4 class="grid-list-title">{{name}}</h4>
-                      </div>
-                      {{#if summary}}
-                          <div class="col-xs-12">
-                              {{markdown summary}}
-                          </div>
-                      {{/if}}
-                      <div class="col-xs-8">
-                          {{#if keywords}}
-                            <ul class="list-inline labels">
-                              {{#keywords}}<li class="label label-keyword">{{.}}</li>{{/keywords}}
-                            </ul>
-                          {{/if}}
-                      </div>
-                    </div>
-                  </li>
+                  {{> label-list id=(itemID 'interest' @index ../resume.interests.length)}}
                 {{/each}}
               </ul>
             </div>
