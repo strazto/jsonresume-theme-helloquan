@@ -4,6 +4,16 @@
 -->
 <!doctype html>
 {{! Partials}}
+{{#* inline "section-header"}}
+  <h3 class="text-uppercase">
+      <a class="anchor-link text-muted" href="#{{id}}">
+          {{#if icon}}<i aria-hidden="true" class="icon-lg {{icon}}"></i>{{/if}}{{#if title}} {{title}}{{/if}}
+
+      <span class="anchor-icon" aria-hidden="true"></span>
+    </a>
+  </h3>
+{{/inline}}
+
 {{#* inline "duration-xs"}}
   {{#if startDate}}
     <p class="visible-xs-block text-muted">
@@ -215,12 +225,7 @@
         <section class="col-md-8 card-wrapper">
           <div class="card">
             <div class="detail" id="about">
-              <h3 class="text-uppercase">
-                <a class="anchor-link text-muted" href="#about">
-                  <i aria-hidden="true" class="icon-lg icon-user"></i> About
-                  <span class="anchor-icon" aria-hidden="true"></span>
-                </a>
-              </h3>
+              {{> section-header id="about" icon="icon-user" title="About"}}
 
               <div class="row">
                 <div class="col-xs-12">
@@ -256,12 +261,7 @@
 
           {{#if resume.work}}
             <div class="detail" id="experience">
-              <h3 class="text-uppercase">
-                <a class="anchor-link text-muted" href="#experience">
-                  <i aria-hidden="true" class="icon-lg icon-building"></i> Work Experience
-                  <span class="anchor-icon" aria-hidden="true"></span>
-                </a>
-              </h3>
+              {{> section-header id="experience" icon="icon-building" title="Work Experience"}}
 
               <ul class="list-unstyled">
                 {{#each resume.work}}
@@ -311,12 +311,7 @@
               type
            }}
            <div class="detail", id="projects">
-              <h3 class="text-uppercase">
-                <a class="anchor-link text-muted" href="#projects">
-                  <i aria-hidden="true" class="icon-lg icon-bookmark"></i> Projects
-                  <span class="anchor-icon" aria-hidden="true"></span>
-                </a>
-              </h3>
+              {{> section-header id="projects" icon="icon-bookmark" title="Projects"}}
            </div>
 
 
@@ -324,12 +319,7 @@
 
           {{#if resume.volunteer}}
             <div class="detail" id="volunteer">
-              <h3 class="text-uppercase">
-                <a class="anchor-link text-muted" href="#volunteer">
-                  <i aria-hidden="true" class="icon-lg icon-bookmark"></i> Volunteering
-                  <span class="anchor-icon" aria-hidden="true"></span>
-                </a>
-              </h3>
+              {{> section-header id="volunteer" icon="icon-bookmark" title="Volunteering"}}
 
               <ul class="list-unstyled">
                 {{#each resume.volunteer}}
@@ -367,12 +357,7 @@
 
           {{#if resume.education}}
             <div class="detail" id="education">
-              <h3 class="text-uppercase">
-                <a class="anchor-link text-muted" href="#education">
-                  <i aria-hidden="true" class="icon-lg icon-graduation-cap"></i> Education
-                  <span class="anchor-icon" aria-hidden="true"></span>
-                </a>
-              </h3>
+              {{> section-header id="education" icon="icon-graduation-cap" title="Education"}}
 
               <ul class="list-unstyled">
                 {{#each resume.education}}
@@ -411,12 +396,7 @@
 
           {{#if resume.skills}}
             <div class="detail" id="skills">
-              <h3 class="text-uppercase">
-                <a class="anchor-link text-muted" href="#skills">
-                  <i aria-hidden="true" class="icon-lg icon-code"></i> Skills
-                  <span class="anchor-icon" aria-hidden="true"></span>
-                </a>
-              </h3>
+              {{> section-header id="skills" icon="icon-code" title="Skills"}}
 
               <ul class="list-unstyled grid-list">
                 {{#each resume.skills}}
@@ -440,12 +420,7 @@
 
           {{#if resume.awards}}
             <div class="detail" id="awards">
-              <h3 class="text-uppercase">
-                <a class="anchor-link text-muted" href="#awards">
-                  <i aria-hidden="true" class="icon-lg icon-trophy"></i> Awards
-                  <span class="anchor-icon" aria-hidden="true"></span>
-                </a>
-              </h3>
+              {{> section-header id="awards" icon="icon-trophy" title="Awards"}}
 
               <ul class="list-unstyled">
                 {{#each resume.awards}}
@@ -487,12 +462,7 @@
 
           {{#if resume.publications}}
             <div class="detail" id="publications">
-              <h3 class="text-uppercase">
-                <a class="anchor-link text-muted" href="#publications">
-                  <i aria-hidden="true" class="icon-lg icon-book"></i> Publications
-                  <span class="anchor-icon" aria-hidden="true"></span>
-                </a>
-              </h3>
+              {{> section-header id="publications" icon="icon-book" title="Publications"}}
 
               <ul class="list-unstyled">
                 {{#each resume.publications}}
@@ -538,12 +508,7 @@
 
           {{#if resume.interests}}
             <div class="detail" id="interests">
-              <h3 class="text-uppercase">
-                <a class="anchor-link text-muted" href="#interests">
-                  <i aria-hidden="true" class="icon-lg icon-heart"></i> Hobbies & Interests
-                  <span class="anchor-icon" aria-hidden="true"></span>
-                </a>
-              </h3>
+              {{> section-header id="interests" icon="icon-heart" title="Hobbies & Interests"}}
 
               <ul class="list-unstyled grid-list">
                 {{#each resume.interests}}
@@ -574,12 +539,7 @@
 
           {{#if resume.languages}}
             <div class="detail" id="languages">
-              <h3 class="text-uppercase">
-                <a class="anchor-link text-muted" href="#languages">
-                  <i aria-hidden="true" class="icon-lg icon-comment"></i> Languages
-                  <span class="anchor-icon" aria-hidden="true"></span>
-                </a>
-              </h3>
+              {{> section-header id="languages" icon="icon-comment" title="Languages"}}
 
               <ul class="list-unstyled grid-list">
                 {{#each resume.languages}}
@@ -602,12 +562,7 @@
 
           {{#if resume.references}}
             <div class="detail" id="references">
-              <h3 class="text-uppercase">
-                <a class="anchor-link text-muted" href="#references">
-                  <i aria-hidden="true" class="icon-lg icon-thumbs-up"></i> References
-                  <span class="anchor-icon" aria-hidden="true"></span>
-                </a>
-              </h3>
+              {{> section-header id="references" icon="icon-thumbs-up" title="References"}}
 
               <ul class="list-unstyled row">
                 <div class="row detail-item">
