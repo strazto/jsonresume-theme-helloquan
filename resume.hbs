@@ -16,8 +16,7 @@
 
 {{#* inline "duration-xs"}}
   {{#if startDate}}
-    <p class="visible-xs-block text-muted">
-      <small>
+    <p class="visible-xs-inline-block duration-inline">
         <time datetime="{{startDate}}">{{formatMMMMYYYY startDate}}</time>&nbsp;—&nbsp;
         {{#if endDate}}
           <time datetime="{{endDate}}">{{formatMMMMYYYY endDate}}</time>
@@ -25,7 +24,6 @@
           <time>Present</time>
         {{/if}}
         &nbsp;<span class="duration-counter"><i aria-hidden="true" class="icon-clock-o"></i>&nbsp;{{humaneDuration startDate endDate}}</span>
-      </small>
     </p>
   {{/if}}
 {{/inline}}
@@ -46,6 +44,11 @@
         <p>
           <i aria-hidden="true" class="icon-clock-o icon-left"></i>&nbsp;{{humaneDuration startDate endDate}}
         </p>
+        {{#if location}}
+            <span class="text-muted">
+              <span itemprop="name">{{location}}</span>
+            </span>
+        {{/if}}
       </div>
     {{/if}}
 {{/inline}}
@@ -86,19 +89,14 @@
 
 {{#* inline "coalesce-entity"}}
     {{~#if entity~}}
-      ,&nbsp;
       {{#if url}}
         <a href="{{url}}"  target="_blank" rel="noreferrer noopener" itemprop="url"><strong itemprop="name">{{entity}}</strong></a>
       {{else}}
         <strong itemprop="name">{{entity}}</strong>
       {{/if}}
-      {{#if location}}
-        <span class="text-muted">
-          <span itemprop="name">&nbsp;@ {{location}}</span>
-        </span>
-      {{/if}}
     {{/if}}
 {{/inline}}
+
 {{#* inline "experience-list"}}
  {{!-- id=(itemID 'experience' @index ../resume.work.length)  --}}
  {{!-- entity=company, organization, entity, even institution i guess  --}}
@@ -110,16 +108,27 @@
      {{~#if itemtype~}} itemtype="http://schema.org/{{itemtype}}" {{/if}}>
     <div class="col-sm-9 detail-item-content">
       <a class="anchor-link item-anchor" href="#{{id}}">#</a>
-      <h4>
-        <strong>{{position}}</strong>
+      <h4 class="detail-item-heading">
           {{~#if company~}}{{> coalesce-entity entity=company}}{{/if}}
           {{~#if entity~}}{{> coalesce-entity entity=entity}}{{/if}}
           {{~#if organization~}}{{> coalesce-entity entity=organization}}{{/if}}
           {{~#if name~}}{{> coalesce-entity entity=name}}{{/if}}
           {{> duration-xs}}
       </h4>
-      <p itemprop="description">{{markdown summary}}</p>
-
+      <h4 class="detail-item-subheading">
+        {{position}}
+        {{~#if location~}}
+        <p class="visible-xs-inline-block location-inline">
+            {{location}}
+        </p>
+        {{/if}}
+      </h4>
+      {{#if summary}}
+          <p itemprop="description">{{markdown summary}}</p>
+      {{/if}}
+      {{#if description}}
+          <p itemprop="description">{{markdown description}}</p>
+      {{/if}}
       {{#if highlights}}
         <ul class="detail-highlights">
           {{#each highlights}}

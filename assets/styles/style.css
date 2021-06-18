@@ -139,6 +139,23 @@ body {
     border: 1px #aaa solid;
 }
 
+.detail-item-heading {
+    margin-bottom: 0;
+    padding-right: 10px;
+}
+
+.detail-item-subheading {
+    font-style: italic;
+    margin-top: 5px;
+    padding-right: 10px;
+}
+
+.duration-inline, .location-inline {
+    margin-top: 0;
+    margin-bottom: 0;
+    float: right;
+}
+
 #skills h4,
 #interests h4 {
     font-weight: bold;
