@@ -355,15 +355,14 @@
           {{/if}}
 
           {{#if resume.projects}}
-          {{!
-            Schema:
-              name, description, highlights, keywords, startDate, endDate,
-              url, roles
-              entity
-              type
-           }}
+          {{!-- Schema: name, description, highlights, keywords, startDate, endDate,
+              url, roles, entity, type
+           --}}
            <div class="detail", id="projects">
               {{> section-header id="projects" icon="icon-bookmark" title="Projects"}}
+              {{#each resume.projects}}
+                {{> experience-list id=(itemID 'project' @index ../resume.projects.length) itemprop="memberOf" itemtype="Project"}}
+              {{/each}}
            </div>
 
 
