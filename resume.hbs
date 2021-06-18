@@ -116,7 +116,12 @@
           {{> duration-xs}}
       </h4>
       <h4 class="detail-item-subheading">
-        {{position}}
+        {{~#if position~}}
+            {{position}}
+        {{/if}}
+        {{~#if roles ~}}
+            {{#each roles}}{{.}} {{/each}}
+        {{/if}}
         {{~#if location~}}
         <p class="visible-xs-inline-block location-inline">
             {{location}}
@@ -137,7 +142,9 @@
         </ul>
       {{/if}}
       {{#if keywords}}
-          {{> label-list id="{{id}}-keywords" keywords=keywords summary=""}}
+          <ul class="list-unstyled ">
+              {{>label-list id=("{{id}}-keywords") summary="" name="Keywords"}}
+          </ul>
       {{/if}}
     </div>
     {{> duration-sm}}
@@ -146,7 +153,7 @@
 {{/inline}}
 {{#* inline "label-list"}}
   {{!-- id="{{itemID 'interest' @index ../resume.interests.length}}" --}}
-  <li class="detail-item row" id="{{id}}">
+  <li class="row label-list" {{#if id}}id="{{id}}"{{/if}}>
     <a class="anchor-link item-anchor" href="#{{id}}">#</a>
     <div class="col-xs-12 detail-item-content row no-gutters">
       <div class="col-xs-3">
@@ -359,12 +366,13 @@
               url, roles, entity, type
            --}}
            <div class="detail", id="projects">
-              {{> section-header id="projects" icon="icon-bookmark" title="Projects"}}
-              {{#each resume.projects}}
-                {{> experience-list id=(itemID 'project' @index ../resume.projects.length) itemprop="memberOf" itemtype="Project"}}
-              {{/each}}
+              {{> section-header id="projects-section" icon="icon-bookmark" title="Projects"}}
+                  <ul class="list-unstyled detail-list">
+                  {{#each resume.projects}}
+                    {{> experience-list id=(itemID 'project' @index ../resume.projects.length) itemprop="memberOf" itemtype="Project"}}
+                  {{/each}}
+              </ul>
            </div>
-
 
           {{/if}}
 
@@ -423,7 +431,7 @@
             <div class="detail" id="skills">
               {{> section-header id="skills" icon="icon-code" title="Skills"}}
 
-              <ul class="list-unstyled grid-list">
+              <ul class="list-unstyled detail-items">
                 {{#each resume.skills}}
                   {{> label-list id=(itemID 'skill' @index ../resume.skills.length)}}
                 {{/each}}
@@ -523,7 +531,7 @@
             <div class="detail" id="interests">
               {{> section-header id="interests" icon="icon-heart" title="Hobbies & Interests"}}
 
-              <ul class="list-unstyled grid-list">
+              <ul class="list-unstyled grid-list detail-items">
                 {{#each resume.interests}}
                   {{> label-list id=(itemID 'interest' @index ../resume.interests.length)}}
                 {{/each}}

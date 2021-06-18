@@ -90,12 +90,19 @@ body {
     text-align: center;
 }
 
+.label-list,
 .detail-item {
-    padding: 5px 0;
+    padding-bottom: 0;
+    padding-top: 5px;
+    padding-left: 0px;
+    padding-right: 0px;
     margin: 0 3px;
-    border-top: 1px solid #ccd6dd;
 }
 
+.detail-items > li,
+.detail-item {
+    border-top: 1px solid #ccd6dd;
+}
 .detail-item-content {
     padding: 0;
 }
@@ -156,8 +163,7 @@ body {
     float: right;
 }
 
-#skills h4,
-#interests h4 {
+h4.grid-list-title {
     font-weight: bold;
 }
 
@@ -168,3 +174,4 @@ body {
 .grid-list-title {
     display: inline-block;
 }
+
