@@ -136,6 +136,9 @@
           {{/each}}
         </ul>
       {{/if}}
+      {{#if keywords}}
+          {{> label-list id="{{id}}-keywords" keywords=keywords summary=""}}
+      {{/if}}
     </div>
     {{> duration-sm}}
   </li>
