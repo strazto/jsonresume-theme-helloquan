@@ -72,6 +72,17 @@ body {
     .detail-item {
         padding: 2px 0;
     }
+
+    .label-list,
+    .detail-item {
+        padding-bottom: 0;
+        padding-top: 5px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .detail-item-content {
+        padding: 0;
+    }
 }
 
 @media (min-width: 768px) {
@@ -90,24 +101,19 @@ body {
     text-align: center;
 }
 
-.label-list,
 .detail-item {
-    padding-bottom: 0;
-    padding-top: 5px;
-    padding-left: 0px;
-    padding-right: 0px;
     margin: 0 3px;
 }
-
 .detail-items > li,
 .detail-item {
     border-top: 1px solid #ccd6dd;
 }
-.detail-item-content {
-    padding: 0;
-}
 
 @media (min-width: 768px) {
+    .detail-item {
+        padding: 10px 0;
+    }
+
     .detail-item-content {
         padding-right: 10px;
     }
