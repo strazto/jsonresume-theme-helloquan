@@ -52,40 +52,6 @@
       </div>
     {{/if}}
 {{/inline}}
-{{#* inline "duration-xs-education"}}
-  {{#if startDate}}
-    <p class="visible-xs-block text-muted">
-      <small>
-        {{#if institution}}
-        <span itemprop="name">{{institution}}</span>&nbsp;|
-        {{/if}}
-        <time datetime="{{startDate}}">{{formatYYYY startDate}}</time>
-        {{#if endDate}}
-        &nbsp;—&nbsp;
-        <time datetime="{{endDate}}">{{formatYYYY endDate}}</time>
-        &nbsp;<span class="duration-counter"><i aria-hidden="true" class="icon-clock-o"></i>&nbsp;{{humaneDuration startDate endDate}}</span>
-        {{/if}}
-      </small>
-    </p>
-  {{/if}}
-{{/inline}}
-
-{{#* inline "duration-sm-education"}}
-    {{#if startDate}}
-      <div class="col-sm-3 detail-item-sidebar text-muted text-center hidden-xs">
-        <p>
-          <time datetime="{{startDate}}">{{formatYYYY startDate}}</time>
-          {{#if endDate}}
-          &nbsp;—&nbsp;
-            <time datetime="{{endDate}}">{{formatYYYY endDate}}</time>
-        </p>
-        <p>
-          <i aria-hidden="true" class="icon-clock-o icon-left"></i>&nbsp;{{humaneDuration startDate endDate}}
-          {{/if}}
-        </p>
-      </div>
-    {{/if}}
-{{/inline}}
 
 {{#* inline "coalesce-entity"}}
     {{~#if entity~}}
@@ -397,38 +363,7 @@
 
               <ul class="list-unstyled detail-list">
                 {{#each resume.education}}
-
-                {{> experience-list id=(itemID 'education' @index ../resume.education.length) dateFmt="YYYY" compactDate=true itemprop="alumniOf" itemtype="EducationalOrganization"}}
-
-
-                  <li class="detail-item row" id="{{itemID 'education' @index ../resume.education.length}}" itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
-                    <div class="col-sm-9 detail-item-content">
-                      <a class="anchor-link item-anchor" href="#{{itemID 'education' @index ../resume.education.length}}">#</a>
-                      <h4>
-                        <strong>{{area}}</strong>
-                        {{~#if studyType~}}
-                          ,&nbsp;<span>{{studyType}}</span>
-                        {{/if}}
-                      </h4>
-                      {{> duration-xs-education}}
-
-                      {{#if institution}}
-                        <p class="text-muted hidden-xs">
-                          <span itemprop="name">{{institution}}</span>
-                          {{~#if gpa~}}
-                            ,&nbsp;GPA: {{gpa}}
-                          {{/if}}
-                        </p>
-                      {{/if}}
-
-                      {{#if courses}}
-                        <ul class="list-inline labels">
-                          {{#courses}}<li class="label label-keyword">{{.}}</li>{{/courses}}
-                        </ul>
-                      {{/if}}
-                    </div>
-                    {{> duration-sm-education}}
-                  </li>
+                    {{> experience-list id=(itemID 'education' @index ../resume.education.length) dateFmt="YYYY" compactDate=true itemprop="alumniOf" itemtype="EducationalOrganization"}}
                 {{/each}}
               </ul>
             </div>
