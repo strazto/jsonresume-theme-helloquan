@@ -368,30 +368,6 @@
             </div>
           {{/if}}
 
-          {{#if resume.education}}
-            <div class="detail" id="education">
-              {{> section-header id="education" icon="icon-graduation-cap" title="Education"}}
-
-              <ul class="list-unstyled detail-list">
-                {{#each resume.education}}
-                    {{> experience-list id=(itemID 'education' @index ../resume.education.length) dateFmt="YYYY" compactDate=true itemprop="alumniOf" itemtype="EducationalOrganization"}}
-                {{/each}}
-              </ul>
-            </div>
-          {{/if}}
-
-          {{#if resume.skills}}
-            <div class="detail" id="skills">
-              {{> section-header id="skills" icon="icon-code" title="Skills"}}
-
-              <ul class="list-unstyled">
-                {{#each resume.skills}}
-                  {{> label-list id=(itemID 'skill' @index ../resume.skills.length)}}
-                {{/each}}
-              </ul>
-            </div>
-          {{/if}}
-
           {{#if resume.awards}}
             <div class="detail" id="awards">
               {{> section-header id="awards" icon="icon-trophy" title="Awards"}}
@@ -434,6 +410,31 @@
               </ul>
             </div>
           {{/if}}
+
+          {{#if resume.education}}
+            <div class="detail" id="education">
+              {{> section-header id="education" icon="icon-graduation-cap" title="Education"}}
+
+              <ul class="list-unstyled detail-list">
+                {{#each resume.education}}
+                    {{> experience-list id=(itemID 'education' @index ../resume.education.length) dateFmt="YYYY" compactDate=true itemprop="alumniOf" itemtype="EducationalOrganization"}}
+                {{/each}}
+              </ul>
+            </div>
+          {{/if}}
+
+          {{#if resume.skills}}
+            <div class="detail" id="skills">
+              {{> section-header id="skills" icon="icon-code" title="Skills"}}
+
+              <ul class="list-unstyled">
+                {{#each resume.skills}}
+                  {{> label-list id=(itemID 'skill' @index ../resume.skills.length)}}
+                {{/each}}
+              </ul>
+            </div>
+          {{/if}}
+
 
           {{#if resume.publications}}
             <div class="detail" id="publications">
