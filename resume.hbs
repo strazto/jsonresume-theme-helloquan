@@ -126,11 +126,11 @@
         {{/if}}
       </h4>
       {{~#if gpa~}}<span>GPA: {{gpa}}</span>{{/if}}
-      {{#if summary}}
-          <p itemprop="description">{{markdown summary}}</p>
+      {{~#if summary~}}
+          <span class="detail-body" itemprop="description">{{~markdown summary~}}</span>
       {{/if}}
-      {{#if description}}
-          <p itemprop="description">{{markdown description}}</p>
+      {{~#if description~}}
+          <span class="detail-body" itemprop="description">{{~markdown description~}}</span>
       {{/if}}
       {{#if highlights}}
         <ul class="detail-highlights">
@@ -470,7 +470,6 @@
                           </small>
                         </p>
                       {{/if}}
-
                       <p>{{markdown summary}}</p>
                     </div>
 
