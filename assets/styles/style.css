@@ -94,6 +94,10 @@ body {
     .detail-body p {
         margin-bottom: 0;
     }
+    .detail-item-heading {
+        margin: 0;
+        padding: 0;
+    }
 }
 
 @media (min-width: 768px) {
@@ -169,19 +173,17 @@ body {
 
 .detail-item-heading {
     margin-bottom: 0;
-    padding-right: 15px;
 }
 
 .detail-item-subheading {
     font-style: italic;
     margin-top: 5px;
-    padding-right: 15px;
 }
 
 .duration-inline, .location-inline {
     margin-top: 0;
     margin-bottom: 0;
-    float: right;
+    padding: 0;
 }
 
 h4.label-list-title {
@@ -195,4 +197,5 @@ h4.label-list-title {
 .label-list-title {
     display: inline-block;
 }
+.no-break { white-space: nowrap; }
 
