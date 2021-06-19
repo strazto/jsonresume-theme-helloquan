@@ -109,11 +109,8 @@
     <div class="col-sm-9 detail-item-content">
       <a class="anchor-link item-anchor" href="#{{id}}">#</a>
       <h4 class="detail-item-heading">
-          {{~#if company~}}{{> coalesce-entity entity=company}}{{/if}}
-          {{~#if entity~}}{{> coalesce-entity entity=entity}}{{/if}}
-          {{~#if organization~}}{{> coalesce-entity entity=organization}}{{/if}}
-          {{~#if name~}}{{> coalesce-entity entity=name}}{{/if}}
-          {{> duration-xs}}
+        {{> coalesce-entity entity=(coalesce entity company organization name "") }}
+        {{> duration-xs}}
       </h4>
       <h4 class="detail-item-subheading">
         {{~#if position~}}
