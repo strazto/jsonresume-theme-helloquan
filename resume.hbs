@@ -140,8 +140,8 @@
         </ul>
       {{/if}}
       {{#if keywords}}
-          <ul class="list-unstyled ">
-              {{>label-list id=("{{id}}-keywords") summary="" name="Keywords"}}
+          <ul class="list-unstyled labels">
+              {{#keywords}}<li class="label label-keyword">{{.}}</li>{{/keywords}}
           </ul>
       {{/if}}
       {{#if courses}}
@@ -156,7 +156,7 @@
 {{/inline}}
 {{#* inline "label-list"}}
   {{!-- id="{{itemID 'interest' @index ../resume.interests.length}}" --}}
-  <li class="row label-list" {{#if id}}id="{{id}}"{{/if}}>
+  <li class="row detail-item" {{#if id}}id="{{id}}"{{/if}}>
     <a class="anchor-link item-anchor" href="#{{id}}">#</a>
     <div class="col-xs-12 detail-item-content row no-gutters">
       <div class="col-xs-3">
@@ -167,7 +167,7 @@
               {{markdown summary}}
           </div>
       {{/if}}
-      <div class="col-xs-9">
+      <div class="col-xs-9 label-container">
           {{#if keywords}}
             <ul class="list-inline labels">
               {{#keywords}}<li class="label label-keyword">{{.}}</li>{{/keywords}}
@@ -438,7 +438,7 @@
             <div class="detail" id="skills">
               {{> section-header id="skills" icon="icon-code" title="Skills"}}
 
-              <ul class="list-unstyled detail-items">
+              <ul class="list-unstyled">
                 {{#each resume.skills}}
                   {{> label-list id=(itemID 'skill' @index ../resume.skills.length)}}
                 {{/each}}
@@ -540,7 +540,7 @@
             <div class="detail" id="interests">
               {{> section-header id="interests" icon="icon-heart" title="Hobbies & Interests"}}
 
-              <ul class="list-unstyled grid-list detail-items">
+              <ul class="list-unstyled grid-list">
                 {{#each resume.interests}}
                   {{> label-list id=(itemID 'interest' @index ../resume.interests.length)}}
                 {{/each}}

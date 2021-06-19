@@ -73,7 +73,6 @@ body {
         padding: 2px 0;
     }
 
-    .label-list,
     .detail-item {
         padding-bottom: 0;
         padding-top: 5px;
@@ -104,7 +103,6 @@ body {
 .detail-item {
     margin: 0 3px;
 }
-.detail-items > li,
 .detail-item {
     border-top: 1px solid #ccd6dd;
 }
@@ -139,6 +137,11 @@ body {
 .label {
     padding: .4em .6em .4em;
     color: #444;
+}
+
+.label-container {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .labels {
