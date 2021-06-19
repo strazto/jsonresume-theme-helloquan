@@ -15,16 +15,25 @@
 {{/inline}}
 
 {{#* inline "duration-xs"}}
-  {{#if startDate}}
-    <p class="visible-xs-inline-block duration-inline">
-        <time datetime="{{startDate}}">{{formatDate startDate (coalesce dateFmt "MMM YYYY")}}</time> —&nbsp;
-        {{#if endDate}}
+  {{~#if startDate~}}
+    <div class="col-xs-4 visible-xs-inline-block duration-inline">
+    <div class="duration-inline small text-right">
+        <span class="no-break">
+        <time class="text-left" datetime="{{startDate}}">{{formatDate startDate (coalesce dateFmt "MMM YYYY")}}</time>—
+        {{~#if endDate~}}
           <time datetime="{{endDate}}">{{formatDate endDate   (coalesce dateFmt "MMM YYYY")}}</time>
         {{else}}
           <time>Present</time>
         {{/if}}
-        &nbsp;<span class="duration-counter"><i aria-hidden="true" class="icon-clock-o"></i>&nbsp;{{humaneDuration startDate endDate}}</span>
-    </p>
+        </span>
+        <span class="duration-counter small text-muted text-right"><i aria-hidden="true" class="icon-clock-o"></i>&nbsp;{{humaneDuration startDate endDate}}</span>
+    </div>
+    {{~#if location~}}
+        <p class="text-muted small detail-item-subheading location-inline text-right">
+            {{location}}
+        </p>
+    {{/if}}
+    </div>
   {{/if}}
 {{/inline}}
 {{#* inline "duration-sm"}}
@@ -74,23 +83,22 @@
      {{~#if itemprop~}} itemscope {{/if}}
      {{~#if itemtype~}} itemtype="http://schema.org/{{itemtype}}" {{/if}}>
     <div class="col-sm-9 detail-item-content">
-      <a class="anchor-link item-anchor" href="#{{id}}">#</a>
-      <h4 class="detail-item-heading">
-        {{> coalesce-entity entity=(coalesce entity company organization institution name "") }}
-        {{> duration-xs}}
-      </h4>
-      <h4 class="detail-item-subheading">
-        {{~#if studyType}}
-            {{#if area}}<strong>{{area}}</strong>, {{/if}}{{studyType}}
-        {{/if}}
-        {{~#if position~}}{{position}}{{/if}}
-        {{~#if roles ~}}{{#each roles}}{{.}} {{/each}}{{/if}}
-        {{~#if location~}}
-        <p class="visible-xs-inline-block location-inline">
-            {{location}}
-        </p>
-        {{/if}}
-      </h4>
+      <div class="row no-gutters detail-item-heading">
+      <div class="col-xs-8 col-sm-12 detail-item-heading">
+          <a class="anchor-link item-anchor" href="#{{id}}">#</a>
+          <h4 class="detail-item-heading">
+            {{> coalesce-entity entity=(coalesce entity company organization institution name "") }}
+          </h4>
+          <h4 class="detail-item-subheading">
+            {{~#if studyType}}
+                {{#if area}}<strong>{{area}}</strong>, {{/if}}{{studyType}}
+            {{/if}}
+            {{~#if position~}}{{position}}{{/if}}
+            {{~#if roles ~}}{{#each roles}}{{.}} {{/each}}{{/if}}
+          </h4>
+      </div>
+      {{> duration-xs}}
+      </div>
       {{~#if gpa~}}<span>GPA: {{gpa}}</span>{{/if}}
       {{~#if summary~}}
           <span class="detail-body" itemprop="description">{{~markdown summary~}}</span>
