@@ -537,6 +537,7 @@
           {{/if}}
 
           {{#if resume.languages}}
+          {{#unless resume.meta.skip.languages}}
             <div class="detail" id="languages">
               {{> section-header id="languages" icon="icon-comment" title="Languages"}}
 
@@ -557,6 +558,7 @@
                 {{/each}}
               </ul>
             </div>
+          {{/unless}}
           {{/if}}
 
           {{#if resume.references}}
