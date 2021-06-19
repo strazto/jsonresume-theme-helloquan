@@ -402,21 +402,21 @@
                   <li class="detail-item row" id="{{itemID 'award' @index ../resume.awards.length}}">
                     <div class="col-sm-9 detail-item-content">
                       <a class="anchor-link item-anchor" href="#{{itemID 'award' @index ../resume.awards.length}}">#</a>
-                      <h4 itemprop="award">
+                      <h4 class="detail-item-heading" itemprop="award">
                         <strong>{{title}}</strong>
                         {{~#if awarder~}}
                           ,&nbsp;<span>{{awarder}}</span>
                         {{/if}}
                       </h4>
 
-                      {{#if date}}
-                        <p class="visible-xs-block text-muted">
+                      {{~#if date~}}
+                        <p class="duration-inline visible-xs-block text-muted">
                           <small>
                             Awarded on:&nbsp;<time datetime="{{date}}">{{formatMMMDDYYYY date}}</time>
                           </small>
                         </p>
                       {{/if}}
-                      <p>{{markdown summary}}</p>
+                      <span>{{~markdown summary~}}</span>
                     </div>
 
                     {{#if date}}
