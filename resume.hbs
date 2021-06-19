@@ -194,27 +194,32 @@
       <section id="profile" class="col-md-4 card-wrapper profile-card-wrapper">
         <div class="card">
           {{#resume.basics}}
-              <div class="row">
-                <div id="profile-pic-wrapper" class="col-xs-3 col-3 col-sm-12">
-                    {{#if picture}}
-                      <img class="hidden-print profile-pic media-object img-circle center-block" src="{{picture}}" alt="" itemprop="image">
-                    {{/if}}
-                </div>
-                <div class="col-9 col-xs-9 col-sm-12">
+              <div class="row no-gutters">
+                <div class="col-xs-9 col-sm-12 basics-name">
                     {{#if name}}
                       <h1 class="text-center" itemprop="name">{{name}}</h1>
                     {{/if}}
                     {{#if label}}
-                      <h2 class="text-center text-muted" itemprop="jobTitle">{{label}}</h2>
-                    {{/if}}
-                    {{#if pronouns}}
-                      <ul class="list-inline list-unstyled basics-pronouns" itemprop="pronouns" id="pronoun-list">
-                          {{#each pronouns}}<li class="basics-pronoun-item" itemprop="pronouns">{{.}}</li>{{/each}}
-                      </ul>
+                      <h2 class="text-center text-muted basics-title" itemprop="jobTitle">{{label}}</h2>
                     {{/if}}
                 </div>
-            <div class="clearfix visible-sm-block visible-md-block visible-lg-block visible-xl-block visible-xxl-block"></div>
+                <div id="profile-pic-wrapper" class="col-xs-3 col-sm-12">
+                    {{#if picture}}
+                      <img class="hidden-print profile-pic media-object img-fluid img-responsive img-circle center-block" src="{{picture}}" alt="" itemprop="image">
+                    {{/if}}
+                </div>
+            </div>
             <ul class="basics nav nav-stacked">
+              {{#if pronouns}}
+                <li class="basics-item">
+                    <a>
+                    <span class="icon text-muted"><i aria-hidden="true" class="icon-lg icon-user"></i></span>
+                    <ul class="list-inline list-unstyled basics-pronouns info" itemprop="pronouns" id="pronoun-list">
+                        {{#each pronouns}}<li class="basics-pronoun-item" itemprop="pronouns">{{.}}</li>{{/each}}
+                    </ul>
+                    </a>
+                </li>
+              {{/if}}
               {{#if phone}}
                 <li class="basics-item">
                   <a href="tel:{{scramblePhone phone}}" data-scrambled-phone-link>
@@ -263,8 +268,6 @@
                 </a>
               </li>
             </ul>
-
-            </div>
 
             <hr>
 

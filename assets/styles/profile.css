@@ -16,6 +16,11 @@
     .profile-pic-wrapper: {
         padding: 0;
     }
+
+    li.basics-item > a {
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -44,19 +49,13 @@
         margin-bottom: 2px;
     }
 }
-li.basics-item > a {
-    padding-top: 2px;
-    padding-bottom: 2px;
-}
 
 .basics-item .icon, .profile-item .icon {
   position: absolute;
   top: 50%;
   margin-top: -10px;
 }
-.basics-pronouns {
-    text-align: center;
-}
+
 .basics-pronouns > .basics-pronoun-item {
     padding-left: 0;
     vertical-align: middle;
