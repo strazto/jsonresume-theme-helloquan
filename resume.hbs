@@ -369,7 +369,7 @@
               url, roles, entity, type
            --}}
            <div class="detail", id="projects">
-              {{> section-header id="projects-section" icon="icon-bookmark" title="Projects"}}
+              {{> section-header id="projects-section" icon="icon-gavel" title="Projects"}}
                   <ul class="list-unstyled detail-list">
                   {{#each resume.projects}}
                     {{> experience-list id=(itemID 'project' @index ../resume.projects.length) itemprop="memberOf" itemtype="Project"}}
@@ -381,7 +381,7 @@
 
           {{#if resume.volunteer}}
             <div class="detail" id="volunteer">
-              {{> section-header id="volunteer" icon="icon-bookmark" title="Volunteering"}}
+              {{> section-header id="volunteer" icon="icon-medkit" title="Volunteering"}}
 
               <ul class="list-unstyled detail-list">
                 {{#each resume.volunteer}}
