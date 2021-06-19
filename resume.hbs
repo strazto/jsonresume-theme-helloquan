@@ -17,9 +17,9 @@
 {{#* inline "duration-xs"}}
   {{#if startDate}}
     <p class="visible-xs-inline-block duration-inline">
-        <time datetime="{{startDate}}">{{formatDate startDate (coalesce dateFmt "MMMM YYYY")}}</time>&nbsp;—&nbsp;
+        <time datetime="{{startDate}}">{{formatDate startDate (coalesce dateFmt "MMM YYYY")}}</time> —&nbsp;
         {{#if endDate}}
-          <time datetime="{{endDate}}">{{formatDate endDate   (coalesce dateFmt "MMMM YYYY")}}</time>
+          <time datetime="{{endDate}}">{{formatDate endDate   (coalesce dateFmt "MMM YYYY")}}</time>
         {{else}}
           <time>Present</time>
         {{/if}}
