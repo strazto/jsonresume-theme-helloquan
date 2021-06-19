@@ -195,17 +195,17 @@
         <div class="card">
           {{#resume.basics}}
               <div class="row no-gutters">
-                <div class="col-xs-9 col-sm-12 basics-name">
-                    {{#if name}}
-                      <h1 class="text-center" itemprop="name">{{name}}</h1>
-                    {{/if}}
-                    {{#if label}}
-                      <h2 class="text-center text-muted basics-title" itemprop="jobTitle">{{label}}</h2>
-                    {{/if}}
-                </div>
                 <div id="profile-pic-wrapper" class="col-xs-3 col-sm-12">
                     {{#if picture}}
                       <img class="hidden-print profile-pic media-object img-fluid img-responsive img-circle center-block" src="{{picture}}" alt="" itemprop="image">
+                    {{/if}}
+                </div>
+                <div class="col-xs-9 col-sm-12 basics-name">
+                    {{#if name}}
+                      <h1 itemprop="name">{{name}}</h1>
+                    {{/if}}
+                    {{#if label}}
+                      <h2 class="text-muted basics-title" itemprop="jobTitle">{{label}}</h2>
                     {{/if}}
                 </div>
             </div>
