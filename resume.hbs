@@ -102,6 +102,7 @@
  {{!-- entity=company, organization, entity, even institution i guess  --}}
  {{!-- itemtype="Organization" --}}
  {{!-- itemprop="worksFor" --}}
+ {{#unless hide}}
  <li class="detail-item row" id="{{id}}"
      {{~#if itemprop~}} itemprop="{{itemprop}}" {{/if}}
      {{~#if itemprop~}} itemscope {{/if}}
@@ -151,7 +152,7 @@
     </div>
     {{> duration-sm}}
   </li>
-
+  {{/unless}}
 {{/inline}}
 {{#* inline "label-list"}}
   {{!-- id="{{itemID 'interest' @index ../resume.interests.length}}" --}}
@@ -451,6 +452,7 @@
 
               <ul class="list-unstyled detail-list">
                 {{#each resume.awards}}
+                {{#unless hide}}
                   <li class="detail-item row" id="{{itemID 'award' @index ../resume.awards.length}}">
                     <div class="col-sm-9 detail-item-content">
                       <a class="anchor-link item-anchor" href="#{{itemID 'award' @index ../resume.awards.length}}">#</a>
@@ -482,6 +484,7 @@
                       </div>
                     {{/if}}
                   </li>
+                  {{/unless}}
                 {{/each}}
               </ul>
             </div>
