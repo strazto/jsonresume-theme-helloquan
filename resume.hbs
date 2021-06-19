@@ -32,10 +32,10 @@
       <div class="col-sm-3 detail-item-sidebar text-muted text-center hidden-xs">
         <p>
           <time datetime="{{startDate}}">{{formatDate startDate (coalesce dateFmt "MMMM YYYY")}}</time>
-          <br>
+          {{#unless compactDate}}<br>{{/unless}}
           &nbsp;—&nbsp;
+          {{#unless compactDate}}<br>{{/unless}}
           {{#if endDate}}
-            <br>
             <time datetime="{{endDate}}">{{formatDate endDate   (coalesce dateFmt "MMMM YYYY")}}</time>
           {{else}}
             <time>Present</time>
@@ -109,22 +109,22 @@
     <div class="col-sm-9 detail-item-content">
       <a class="anchor-link item-anchor" href="#{{id}}">#</a>
       <h4 class="detail-item-heading">
-        {{> coalesce-entity entity=(coalesce entity company organization name "") }}
+        {{> coalesce-entity entity=(coalesce entity company organization institution name "") }}
         {{> duration-xs}}
       </h4>
       <h4 class="detail-item-subheading">
-        {{~#if position~}}
-            {{position}}
+        {{~#if studyType}}
+            {{#if area}}<strong>{{area}}</strong>, {{/if}}{{studyType}}
         {{/if}}
-        {{~#if roles ~}}
-            {{#each roles}}{{.}} {{/each}}
-        {{/if}}
+        {{~#if position~}}{{position}}{{/if}}
+        {{~#if roles ~}}{{#each roles}}{{.}} {{/each}}{{/if}}
         {{~#if location~}}
         <p class="visible-xs-inline-block location-inline">
             {{location}}
         </p>
         {{/if}}
       </h4>
+      {{~#if gpa~}}<span>GPA: {{gpa}}</span>{{/if}}
       {{#if summary}}
           <p itemprop="description">{{markdown summary}}</p>
       {{/if}}
@@ -142,6 +142,11 @@
           <ul class="list-unstyled ">
               {{>label-list id=("{{id}}-keywords") summary="" name="Keywords"}}
           </ul>
+      {{/if}}
+      {{#if courses}}
+        <ul class="list-inline labels">
+          {{#courses}}<li class="label label-keyword">{{.}}</li>{{/courses}}
+        </ul>
       {{/if}}
     </div>
     {{> duration-sm}}
@@ -391,6 +396,10 @@
 
               <ul class="list-unstyled detail-list">
                 {{#each resume.education}}
+
+                {{> experience-list id=(itemID 'education' @index ../resume.education.length) dateFmt="YYYY" compactDate=true itemprop="alumniOf" itemtype="EducationalOrganization"}}
+
+
                   <li class="detail-item row" id="{{itemID 'education' @index ../resume.education.length}}" itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
                     <div class="col-sm-9 detail-item-content">
                       <a class="anchor-link item-anchor" href="#{{itemID 'education' @index ../resume.education.length}}">#</a>
