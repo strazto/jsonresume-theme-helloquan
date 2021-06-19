@@ -163,7 +163,7 @@ body {
     float: right;
 }
 
-h4.grid-list-title {
+h4.label-list-title {
     font-weight: bold;
 }
 
@@ -171,7 +171,7 @@ h4.grid-list-title {
     border: none;
 }
 
-.grid-list-title {
+.label-list-title {
     display: inline-block;
 }
 
