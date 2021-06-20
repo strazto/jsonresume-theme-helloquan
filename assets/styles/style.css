@@ -91,7 +91,7 @@ body {
     }
 
     .detail-item-subheading {
-        margin-bottom: 5px;
+        margin: 0;
     }
 
     .detail-body {
@@ -199,7 +199,6 @@ body {
 
 .detail-item-subheading {
     font-style: italic;
-    margin-top: 5px;
 }
 
 .duration-inline, .location-inline {
