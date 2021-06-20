@@ -15,8 +15,8 @@
 {{/inline}}
 
 {{#* inline "duration-xs"}}
+<div class="col-xs-4 visible-xs-inline-block duration-inline">
   {{~#if startDate~}}
-    <div class="col-xs-4 visible-xs-inline-block duration-inline">
     <div class="duration-inline small text-right">
         <span class="no-break">
         <time class="text-left" datetime="{{startDate}}">{{formatDate startDate (coalesce dateFmt "MMM YYYY")}}</time>—
@@ -28,17 +28,22 @@
         </span>
         <span class="duration-counter small text-muted text-right"><i aria-hidden="true" class="icon-clock-o"></i>&nbsp;{{humaneDuration startDate endDate}}</span>
     </div>
-    {{~#if location~}}
-        <p class="text-muted small detail-item-subheading location-inline text-right">
-            {{location}}
-        </p>
-    {{/if}}
+  {{/if}}
+  {{~#if date}}
+    <div class="duration-inline small text-right">
+        <time datetime="{{date}}">{{formatMMMDDYYYY date}}</time>
     </div>
   {{/if}}
+  {{~#if location~}}
+    <p class="text-muted small detail-item-subheading location-inline text-right">
+        {{location}}
+    </p>
+  {{/if}}
+</div>
 {{/inline}}
 {{#* inline "duration-sm"}}
+<div class="col-sm-3 detail-item-sidebar text-muted text-center hidden-xs">
     {{#if startDate}}
-      <div class="col-sm-3 detail-item-sidebar text-muted text-center hidden-xs">
         <p>
           <time datetime="{{startDate}}">{{formatDate startDate (coalesce dateFmt "MMMM YYYY")}}</time>
           {{#unless compactDate}}<br>{{/unless}}
@@ -53,13 +58,19 @@
         <p>
           <i aria-hidden="true" class="icon-clock-o icon-left"></i>&nbsp;{{humaneDuration startDate endDate}}
         </p>
-        {{#if location}}
-            <span class="text-muted">
-              <span itemprop="name">{{location}}</span>
-            </span>
-        {{/if}}
-      </div>
     {{/if}}
+    {{#if date}}
+    <p>
+    {{!-- <strong>Awarded on:</strong><br> --}}
+      <time datetime="{{date}}">{{formatMMMDDYYYY date}}</time>
+    </p>
+    {{/if}}
+    {{#if location}}
+        <span class="text-muted">
+          <span itemprop="name">{{location}}</span>
+        </span>
+    {{/if}}
+</div>
 {{/inline}}
 
 {{#* inline "coalesce-entity"}}
@@ -87,12 +98,13 @@
       <div class="col-xs-8 col-sm-12 detail-item-heading">
           <a class="anchor-link item-anchor" href="#{{id}}">#</a>
           <h4 class="detail-item-heading">
-            {{> coalesce-entity entity=(coalesce entity company organization institution name "") }}
+            {{> coalesce-entity entity=(coalesce entity company organization institution name title "") }}
           </h4>
           <h4 class="detail-item-subheading">
             {{~#if studyType}}
                 {{#if area}}<strong>{{area}}</strong>, {{/if}}{{studyType}}
             {{/if}}
+            {{~#if awarder ~}}{{awarder}}{{/if}}
             {{~#if position~}}{{position}}{{/if}}
             {{~#if roles ~}}{{#each roles}}{{.}} {{/each}}{{/if}}
           </h4>
@@ -382,37 +394,8 @@
               <ul class="list-unstyled detail-list">
                 {{#each resume.awards}}
                 {{#unless hide}}
-                  <li class="detail-item row" id="{{itemID 'award' @index ../resume.awards.length}}">
-                    <div class="col-sm-9 detail-item-content">
-                      <a class="anchor-link item-anchor" href="#{{itemID 'award' @index ../resume.awards.length}}">#</a>
-                      <h4 class="detail-item-heading" itemprop="award">
-                        <strong>{{title}}</strong>
-                        {{~#if awarder~}}
-                          ,&nbsp;<span>{{awarder}}</span>
-                        {{/if}}
-                      </h4>
-
-                      {{~#if date~}}
-                        <p class="duration-inline visible-xs-block text-muted">
-                          <small>
-                            Awarded on:&nbsp;<time datetime="{{date}}">{{formatMMMDDYYYY date}}</time>
-                          </small>
-                        </p>
-                      {{/if}}
-                      <span class="detail-body">{{~markdown summary~}}</span>
-                    </div>
-
-                    {{#if date}}
-                      <div class="col-sm-3 detail-item-sidebar text-muted text-center hidden-xs">
-                        <p>
-                          <strong>Awarded on:</strong>
-                          <br>
-                          <time datetime="{{date}}">{{formatMMMDDYYYY date}}</time>
-                        </p>
-                      </div>
-                    {{/if}}
-                  </li>
-                  {{/unless}}
+                    {{> experience-list id=(itemID 'award' @index ../resume.awards.length) itemprop="award" }}
+                {{/unless}}
                 {{/each}}
               </ul>
             </div>
