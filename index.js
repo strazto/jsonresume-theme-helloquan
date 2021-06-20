@@ -21,5 +21,9 @@ module.exports = {
         margin: {top:'0mm', right:'0mm', bottom:'0mm', left: '0mm'},
         printBackground: false,
         scale: 1
+    },
+    pdfViewport: {
+        "width" : 767,
+        "height": 1080
     }
 };
