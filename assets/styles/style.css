@@ -1,5 +1,9 @@
-body {
+html {
     font-size: 14px;
+}
+
+body {
+    font-size: 1rem;
 }
 
 .profile-card-wrapper {

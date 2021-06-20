@@ -42,19 +42,19 @@ body {
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 2.1rem;
   margin-top: 5px;
   margin-bottom: 5px;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 1.7rem;
   margin-top: 5px;
   margin-bottom: 5px;
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 1.43rem;
 }
 
 .anchor-link {
@@ -86,7 +86,7 @@ h3 {
 
 .anchor-link.item-anchor {
   float: right;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #E1E8ED;
 }
 
@@ -95,7 +95,7 @@ h3 {
 }
 
 h4 {
-  font-size: 14px;
+  font-size: 1rem;
 }
 
 .text-muted {
