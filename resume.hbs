@@ -122,12 +122,12 @@
         </ul>
       {{/if}}
       {{#if keywords}}
-          <ul class="list-unstyled labels">
+          <ul class="list-unstyled labels small">
               {{#keywords}}<li class="label label-keyword">{{.}}</li>{{/keywords}}
           </ul>
       {{/if}}
       {{#if courses}}
-        <ul class="list-inline labels">
+        <ul class="list-inline labels small">
           {{#courses}}<li class="label label-keyword">{{.}}</li>{{/courses}}
         </ul>
       {{/if}}
@@ -142,7 +142,7 @@
     <a class="anchor-link item-anchor" href="#{{id}}">#</a>
     <div class="col-xs-12 detail-item-content row no-gutters">
       <div class="col-xs-3">
-          <h4 class="label-list-title">{{name}}</h4>
+          <h4 class="label-list-title detail-item-heading">{{name}}</h4>
       </div>
       {{#if summary}}
           <div class="col-xs-12">
@@ -151,7 +151,7 @@
       {{/if}}
       <div class="col-xs-9 label-container">
           {{#if keywords}}
-            <ul class="list-inline labels">
+            <ul class="list-inline labels small">
               {{#keywords}}<li class="label label-keyword">{{.}}</li>{{/keywords}}
             </ul>
           {{/if}}
@@ -417,7 +417,7 @@
             <div class="detail" id="skills">
               {{> section-header id="skills" icon="icon-code" title="Skills"}}
 
-              <ul class="list-unstyled">
+              <ul class="list-unstyled grid-list">
                 {{#each resume.skills}}
                   {{> label-list id=(itemID 'skill' @index ../resume.skills.length)}}
                 {{/each}}
