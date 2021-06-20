@@ -26,10 +26,15 @@
         padding-right: 0;
     }
 
+    .p-xs-0 {
+        padding: 0;
+    }
+
     .basics-title, .basics-name {margin-bottom: 0;}
 
     .profile-pic-wrapper {
-        padding: 0;
+        padding-left: 2px;
+        padding-right: 2px;
         float: left;
         display: inline-block;
     }

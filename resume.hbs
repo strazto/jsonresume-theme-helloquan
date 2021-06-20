@@ -208,78 +208,81 @@
                       <img class="hidden-print profile-pic media-object img-fluid img-responsive img-circle center-block" src="{{picture}}" alt="" itemprop="image">
                     {{/if}}
                 </div>
-                <div class="col-xs-10 col-sm-12 row name-title-container">
-                    {{#if name}}
-                    <div class="col-xs-6 col-sm-12 basics-name-container">
-                      <h1 itemprop="name" class="basics-name">{{name}}</h1>
+                <div class="col-xs-10 col-sm-12 p-xs-0">
+                    <div class="row name-title-container">
+                        {{#if name}}
+                        <div class="col-xs-6 col-sm-12 basics-name-container">
+                          <h1 itemprop="name" class="basics-name">{{name}}</h1>
+                        </div>
+                        {{/if}}
+                        {{#if label}}
+                        <div class="col-xs-6 col-sm-12 p-xs-0 basics-title-container">
+                          <h2 class="text-muted basics-title text-center" itemprop="jobTitle">{{label}}</h2>
+                        </div>
+                        {{/if}}
                     </div>
-                    {{/if}}
-                    {{#if label}}
-                    <div class="col-xs-6 col-sm-12 basics-title-container">
-                      <h2 class="text-muted basics-title" itemprop="jobTitle">{{label}}</h2>
-                    </div>
-                    {{/if}}
-                </div>
-                <div class="clearfix hidden-xs"></div>
-            <ul class="basics nav nav-stacked">
-              {{#if pronouns}}
-                <li class="basics-item">
-                    <a>
-                    <span class="icon text-muted"><i aria-hidden="true" class="icon-lg icon-user"></i></span>
-                    <ul class="list-inline list-unstyled basics-pronouns info" itemprop="pronouns" id="pronoun-list">
-                        {{#each pronouns}}<li class="basics-pronoun-item" itemprop="pronouns">{{.}}</li>{{/each}}
-                    </ul>
-                    </a>
-                </li>
-              {{/if}}
-              {{#if phone}}
-                <li class="basics-item">
-                  <a href="tel:{{scramblePhone phone}}" data-scrambled-phone-link>
-                    <span class="icon text-muted"><i aria-hidden="true" class="icon-lg icon-phone"></i></span>
-                    <span class="info" data-scrambled-phone-text>{{obfuscateText phone}}</span>
-                  </a>
-                </li>
-              {{/if}}
-              {{#if location}}
-                <li class="basics-item">
-                  {{#location}}
-                    <a href="{{mapURL this}}" target="_blank" rel="noreferrer noopener" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-                      <span class="icon text-muted"><i aria-hidden="true" class="icon-lg icon-location-arrow"></i></span>
-                      <span class="info">
-                        {{#if address}}<span itemprop="streetAddress">{{address}},</span>{{/if}}
-                        {{#if city}}<span itemprop="addressLocality">{{city}},</span>{{/if}}
-                        {{#if postalCode}}<span itemprop="postalCode">{{postalCode}},</span>{{/if}}
-                        {{#if region}}<span itemprop="addressRegion">{{region}},</span>{{/if}}
-                        {{#if countryCode}}<span itemprop="addressCountry">{{countryCode}}</span>{{/if}}
-                      </span>
-                    </a>
-                  {{/location}}
-                </li>
-              {{/if}}
-              {{#if email}}
-                <li class="basics-item">
-                  <a href="mailto:{{scrambleText email}}" data-scrambled-email-link>
-                    <span class="icon text-muted"><i aria-hidden="true" class="icon-lg icon-envelope"></i></span>
-                    <span data-scrambled-email-text class="info">{{obfuscateText email}}</span>
-                  </a>
-                </li>
-              {{/if}}
-              {{#if website}}
-                <li class="basics-item">
-                  <a href="{{website}}" rel="author" target="_blank" rel="noreferrer noopener" itemprop="url">
-                    <span class="icon text-muted"><i aria-hidden="true" class="icon-lg icon-chain"></i></span>
-                    <span class="info">{{sanitizeURL website}}</span>
-                  </a>
-                </li>
-              {{/if}}
+                    <div class="col-xs-12 p-xs-0">
+                        <ul class="basics nav nav-stacked">
+                          {{#if pronouns}}
+                            <li class="basics-item">
+                                <a>
+                                <span class="icon text-muted"><i aria-hidden="true" class="icon-lg icon-user"></i></span>
+                                <ul class="list-inline list-unstyled basics-pronouns info" itemprop="pronouns" id="pronoun-list">
+                                    {{#each pronouns}}<li class="basics-pronoun-item" itemprop="pronouns">{{.}}</li>{{/each}}
+                                </ul>
+                                </a>
+                            </li>
+                          {{/if}}
+                          {{#if phone}}
+                            <li class="basics-item">
+                              <a href="tel:{{scramblePhone phone}}" data-scrambled-phone-link>
+                                <span class="icon text-muted"><i aria-hidden="true" class="icon-lg icon-phone"></i></span>
+                                <span class="info" data-scrambled-phone-text>{{obfuscateText phone}}</span>
+                              </a>
+                            </li>
+                          {{/if}}
+                          {{#if location}}
+                            <li class="basics-item">
+                              {{#location}}
+                                <a href="{{mapURL this}}" target="_blank" rel="noreferrer noopener" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                                  <span class="icon text-muted"><i aria-hidden="true" class="icon-lg icon-location-arrow"></i></span>
+                                  <span class="info">
+                                    {{#if address}}<span itemprop="streetAddress">{{address}},</span>{{/if}}
+                                    {{#if city}}<span itemprop="addressLocality">{{city}},</span>{{/if}}
+                                    {{#if postalCode}}<span itemprop="postalCode">{{postalCode}},</span>{{/if}}
+                                    {{#if region}}<span itemprop="addressRegion">{{region}},</span>{{/if}}
+                                    {{#if countryCode}}<span itemprop="addressCountry">{{countryCode}}</span>{{/if}}
+                                  </span>
+                                </a>
+                              {{/location}}
+                            </li>
+                          {{/if}}
+                          {{#if email}}
+                            <li class="basics-item">
+                              <a href="mailto:{{scrambleText email}}" data-scrambled-email-link>
+                                <span class="icon text-muted"><i aria-hidden="true" class="icon-lg icon-envelope"></i></span>
+                                <span data-scrambled-email-text class="info">{{obfuscateText email}}</span>
+                              </a>
+                            </li>
+                          {{/if}}
+                          {{#if website}}
+                            <li class="basics-item">
+                              <a href="{{website}}" rel="author" target="_blank" rel="noreferrer noopener" itemprop="url">
+                                <span class="icon text-muted"><i aria-hidden="true" class="icon-lg icon-chain"></i></span>
+                                <span class="info">{{sanitizeURL website}}</span>
+                              </a>
+                            </li>
+                          {{/if}}
 
-              <li class="basics-item hidden-print js-download-trigger" style="display: none;">
-                <a id="js-download" href="#download">
-                  <span class="icon text-muted"><i aria-hidden="true" class="icon-lg icon-download"></i></span>
-                  <span class="info">Download this resume</span>
-                </a>
-              </li>
-            </ul>
+                          <li class="basics-item hidden-print js-download-trigger" style="display: none;">
+                            <a id="js-download" href="#download">
+                              <span class="icon text-muted"><i aria-hidden="true" class="icon-lg icon-download"></i></span>
+                              <span class="info">Download this resume</span>
+                            </a>
+                          </li>
+                        </ul>
+                    </div>
+                </div>
 
             </div>
             <hr class="my-xs-0">
