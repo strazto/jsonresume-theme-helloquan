@@ -5,7 +5,7 @@
 <!doctype html>
 {{! Partials}}
 {{#* inline "section-header"}}
-  <h3 class="text-uppercase">
+  <h3 class="text-uppercase section-header">
       <a class="anchor-link text-muted" href="#{{id}}">
           {{#if icon}}<i aria-hidden="true" class="icon-lg {{icon}}"></i>{{/if}}{{#if title}} {{title}}{{/if}}
 
@@ -399,7 +399,7 @@
                           </small>
                         </p>
                       {{/if}}
-                      <span>{{~markdown summary~}}</span>
+                      <span class="detail-body">{{~markdown summary~}}</span>
                     </div>
 
                     {{#if date}}
