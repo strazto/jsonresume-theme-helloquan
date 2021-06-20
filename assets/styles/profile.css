@@ -8,14 +8,30 @@
         padding-left: 0;
     }
 
-    .basics-name {
+    .basics-name, .basics-title {
         padding-left: 0;
         padding-right: 5px;
         text-align: left;
     }
 
-    .profile-pic-wrapper: {
+    .name-title-container {
+        display: flex;
+        margin-top: auto;
         padding: 0;
+    }
+
+    .basics-title-container, .basics-name-container {
+        display: flex;
+        margin-top: auto;
+        padding-right: 0;
+    }
+
+    .basics-title, .basics-name {margin-bottom: 0;}
+
+    .profile-pic-wrapper {
+        padding: 0;
+        float: left;
+        display: inline-block;
     }
 
     .profile-pic {
