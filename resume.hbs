@@ -112,12 +112,8 @@
       {{> duration-xs}}
       </div>
       {{~#if gpa~}}<span>GPA: {{gpa}}</span>{{/if}}
-      {{~#if summary~}}
-          <span class="detail-body" itemprop="description">{{~markdown summary~}}</span>
-      {{/if}}
-      {{~#if description~}}
-          <span class="detail-body" itemprop="description">{{~markdown description~}}</span>
-      {{/if}}
+      {{~#if summary~}}<span class="detail-body" itemprop="description">{{~markdown summary~}}</span>{{/if}}
+      {{~#if description~}}<span class="detail-body" itemprop="description">{{~markdown description~}}</span>{{/if}}
       {{#if highlights}}
         <ul class="detail-highlights">
           {{#each highlights}}
