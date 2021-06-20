@@ -23,8 +23,8 @@
     }
 
     li.basics-item > a {
-        padding-top: 2px;
-        padding-bottom: 2px;
+        padding-top: 1px;
+        padding-bottom: 1px;
     }
 }
 
@@ -91,7 +91,7 @@ li.basics-pronoun-item:last-of-type:after {
 }
 
 .social-profiles .profile-item a {
-  padding: 5px 15px;
+  padding: 2px 15px;
   color: inherit;
   text-align: left;
 }
