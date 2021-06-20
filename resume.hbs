@@ -330,6 +330,7 @@
         <div class="card">
 
           {{#if resume.work}}
+            {{#unless resume.meta.skip.work}}
             <div class="detail" id="experience">
               {{> section-header id="experience" icon="icon-building" title="Work Experience"}}
 
@@ -339,12 +340,15 @@
                 {{/each}}
               </ul>
             </div>
+            {{/unless}}
           {{/if}}
 
-          {{#if resume.projects}}
-          {{!-- Schema: name, description, highlights, keywords, startDate, endDate,
-              url, roles, entity, type
+          {{!--
+             -- Schema: name, description, highlights, keywords, startDate, endDate,
+             -- url, roles, entity, type
            --}}
+          {{#if resume.projects}}
+           {{#unless resume.meta.skip.projects}}
            <div class="detail", id="projects">
               {{> section-header id="projects-section" icon="icon-gavel" title="Projects"}}
                   <ul class="list-unstyled detail-list">
@@ -353,10 +357,11 @@
                   {{/each}}
               </ul>
            </div>
-
+           {{/unless}}
           {{/if}}
 
           {{#if resume.volunteer}}
+            {{#unless resume.meta.skip.volunteer}}
             <div class="detail" id="volunteer">
               {{> section-header id="volunteer" icon="icon-medkit" title="Volunteering"}}
 
@@ -366,9 +371,11 @@
                 {{/each}}
               </ul>
             </div>
+            {{/unless}}
           {{/if}}
 
           {{#if resume.awards}}
+            {{#unless resume.meta.skip.awards}}
             <div class="detail" id="awards">
               {{> section-header id="awards" icon="icon-trophy" title="Awards"}}
 
@@ -409,9 +416,11 @@
                 {{/each}}
               </ul>
             </div>
+            {{/unless}}
           {{/if}}
 
           {{#if resume.education}}
+            {{#unless resume.meta.skip.education}}
             <div class="detail" id="education">
               {{> section-header id="education" icon="icon-graduation-cap" title="Education"}}
 
@@ -421,9 +430,11 @@
                 {{/each}}
               </ul>
             </div>
+            {{/unless}}
           {{/if}}
 
           {{#if resume.skills}}
+            {{#unless resume.meta.skip.skills}}
             <div class="detail" id="skills">
               {{> section-header id="skills" icon="icon-code" title="Skills"}}
 
@@ -433,10 +444,12 @@
                 {{/each}}
               </ul>
             </div>
+            {{/unless}}
           {{/if}}
 
 
           {{#if resume.publications}}
+            {{#unless resume.meta.skip.publications}}
             <div class="detail" id="publications">
               {{> section-header id="publications" icon="icon-book" title="Publications"}}
 
@@ -480,9 +493,11 @@
                 {{/each}}
               </ul>
             </div>
+            {{/unless}}
           {{/if}}
 
           {{#if resume.interests}}
+            {{#unless resume.meta.skip.interests}}
             <div class="detail" id="interests">
               {{> section-header id="interests" icon="icon-heart" title="Hobbies & Interests"}}
 
@@ -492,6 +507,7 @@
                 {{/each}}
               </ul>
             </div>
+            {{/unless}}
           {{/if}}
 
           {{#if resume.languages}}
@@ -520,6 +536,7 @@
           {{/if}}
 
           {{#if resume.references}}
+            {{#unless resume.meta.skip.references}}
             <div class="detail" id="references">
               {{> section-header id="references" icon="icon-thumbs-up" title="References"}}
 
@@ -539,6 +556,7 @@
                 </div>
               </ul>
             </div>
+            {{/unless}}
           {{/if}}
 
           <ul class="nav nav-justified visible-xs-block visible-sm-block hidden-print">
