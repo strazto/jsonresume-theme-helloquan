@@ -7,7 +7,12 @@
     .basics {
         padding-left: 0;
     }
-
+    .basics-name {
+        text-align: right;
+    }
+    .basics-title {
+        text-align: left;
+    }
     .basics-name, .basics-title {
         padding-left: 0;
         padding-right: 5px;
@@ -16,13 +21,19 @@
     .name-title-container {
         display: flex;
         margin-top: auto;
-        padding: 0;
+        margin-left: 0;
+        margin-right: 0;
+
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-right: 15px;
     }
 
     .basics-title-container, .basics-name-container {
         display: flex;
         margin-top: auto;
         padding-right: 0;
+        padding-left: 0;
     }
 
     .p-xs-0 {
@@ -32,7 +43,8 @@
     .basics-title, .basics-name {margin-bottom: 0;}
 
     .profile-pic-wrapper {
-        padding-left: 2px;
+        padding-left: 15px;
+        padding-top: 5px;
         padding-right: 2px;
         float: left;
         display: inline-block;
@@ -58,10 +70,6 @@
 
     .basics {
         padding-left: 30px;
-    }
-
-    .basics-name {
-        text-align: center;
     }
 }
 
