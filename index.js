@@ -22,8 +22,8 @@ module.exports = {
         printBackground: false,
         preferCSSPageSize: true
     },
-    pdfViewport: {
-        "width" : 767,
-        "height": 1080
-    }
+    //pdfViewport: {
+    //    "width" : 767,
+    //    "height": 1080
+    //}
 };
