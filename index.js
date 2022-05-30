@@ -21,7 +21,7 @@ module.exports = {
 
 
     pdfRenderOptions: {
-        format: 'A4',
+        // format: 'A4',
         margin: {top:'0mm', right:'0mm', bottom:'0mm', left: '0mm'},
         printBackground: false,
         width: `${(desired_width*1.3) % 1}px`,
