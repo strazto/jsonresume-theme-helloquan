@@ -20,7 +20,7 @@ module.exports = {
         format: 'A4',
         margin: {top:'0mm', right:'0mm', bottom:'0mm', left: '0mm'},
         printBackground: false,
-        preferCSSPageSize: true
+        scale: 1.3
     },
     //pdfViewport: {
     //    "width" : 767,
